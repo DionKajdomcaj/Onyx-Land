@@ -1,0 +1,6 @@
+public class Shrubs extends Gardens{
+    public Shrubs(int price,int moodImprovement,Point pos){
+        super(price, moodImprovement, pos);
+
+    }
+}
