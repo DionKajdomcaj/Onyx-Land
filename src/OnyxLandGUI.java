@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class OnyxLandGUI {
+    public GameEngine gameng;
     public JFrame menuframe;
     public JFrame gameFrame;
     public MenuPanel menupanel;
@@ -16,6 +17,8 @@ public class OnyxLandGUI {
 
     public OnyxLandGUI(){
         menuframe=new JFrame("OnyxLand");
+
+
 
         //creating backgroung img
         BufferedImage img = null;
@@ -80,6 +83,20 @@ public class OnyxLandGUI {
                     menuframe.setVisible(true);
                 }
             });
+            if (menupanel.startButton != null){
+                menupanel.startButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        gameng = new GameEngine();
+                        System.out.println(1);
+                        menuframe.setVisible(false);
+                        //menuframe.getContentPane().removeAll();
+                        gameng.setVisible(true);
+                    }
+                });
+
+            }
+
         }
 
     }
