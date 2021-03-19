@@ -50,8 +50,6 @@ public class OnyxLandGUI {
 
                                 //menuframe.getContentPane().removeAll();
                                 //menuframe.getContentPane().repaint();
-
-                                gameng.setVisible(true);
                             }
                         });
 
@@ -83,12 +81,14 @@ public class OnyxLandGUI {
             //}
         }
         else if (i == 2) { //the second start window
+            System.out.println(2);
             gameFrame = new JFrame("OnyxLand");
             gameFrame.setSize(700, 700);
             gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setBackground2(gameFrame);
 
             gameFrame.setVisible(true);
+
 
         }
     }
@@ -116,8 +116,8 @@ public class OnyxLandGUI {
         }
         Image dimg = img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
         ImageIcon imageIcon = new ImageIcon(dimg);
-        menuframe.setContentPane(new JLabel(imageIcon));
-        menuframe.getContentPane().setLayout(new BoxLayout(menuframe.getContentPane(), BoxLayout.PAGE_AXIS));
+        gameFrame.setContentPane(new JLabel(imageIcon));
+        gameFrame.getContentPane().setLayout(new BoxLayout(gameFrame.getContentPane(), BoxLayout.PAGE_AXIS));
     }
 
 
