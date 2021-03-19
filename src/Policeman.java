@@ -6,5 +6,4 @@ public class Policeman {
 
     public void escort(Thief thief){}
 
-
 }

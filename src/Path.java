@@ -4,6 +4,6 @@ public class Path {
     public Point position;
     public Path(int price,Point pos){
         this.price=price;
-        this.position=new Point(pos);
+        this.position = new Point(pos);
     }
 }

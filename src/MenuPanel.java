@@ -18,6 +18,8 @@ public class MenuPanel extends JPanel{
     protected JPanel rulesContainer;
     protected JLabel rules;
 
+    public GameEngine gameng;
+
     public MenuPanel(int i) { // int i - we will have 3 start windows, this i represents number of each one
                              //i = 1 => newgame/rules/exit; i = 2 => player's name/park name/start; i = 3 => game rules
 
@@ -125,6 +127,18 @@ public class MenuPanel extends JPanel{
         add(startButton, gbc);
 
         this.setOpaque(false);
+
+
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameng = new GameEngine();
+                System.out.println(1);
+                setVisible(false);
+                //menuframe.getContentPane().removeAll();
+                gameng.setVisible(true);
+            }
+        });
     }
     private void window3() {
         nameGame = new JLabel("Onyx Land");
