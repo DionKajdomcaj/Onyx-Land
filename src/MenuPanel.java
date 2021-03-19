@@ -129,16 +129,7 @@ public class MenuPanel extends JPanel{
         this.setOpaque(false);
 
 
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                gameng = new GameEngine();
-                System.out.println(1);
-                setVisible(false);
-                //menuframe.getContentPane().removeAll();
-                gameng.setVisible(true);
-            }
-        });
+
     }
     private void window3() {
         nameGame = new JLabel("Onyx Land");

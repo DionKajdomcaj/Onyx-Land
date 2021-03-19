@@ -18,21 +18,15 @@ public class OnyxLandGUI {
     public OnyxLandGUI(int i){
         if (i == 1) { //if we want to display start menu settings
             menuframe = new JFrame("OnyxLand");
-
-            setBackground(menuframe);
             menuframe.setSize(500, 500);
             menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        /*nameGame = new JLabel("Onyx Land");
-        nameGame.setHorizontalAlignment(SwingConstants.CENTER);
-        nameGame.setFont(new Font("Bernard MT Condensed",Font.PLAIN,28));
-        nameGame.setForeground(new Color(212, 210, 210));*/
+            setBackground(menuframe);
 
             menupanel = new MenuPanel(1);
             menuframe.getContentPane().add(menupanel);
             menuframe.setVisible(true);
 
-            if (menupanel.newGameButton != null) {
+            //if (menupanel.newGameButton != null) {
                 menupanel.newGameButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent actionEvent) {
@@ -44,6 +38,22 @@ public class OnyxLandGUI {
 
                         menupanel = new MenuPanel(2);
                         menuframe.getContentPane().add(menupanel);
+
+                        menupanel.startButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                gameng = new GameEngine();
+                                System.out.println(1);
+                                menuframe.setVisible(false);
+
+                                OnyxLandGUI gui = new OnyxLandGUI(2);
+
+                                //menuframe.getContentPane().removeAll();
+                                //menuframe.getContentPane().repaint();
+
+                                gameng.setVisible(true);
+                            }
+                        });
 
                         menuframe.setVisible(true);
                     }
@@ -70,8 +80,15 @@ public class OnyxLandGUI {
                     }
                 });
 
-            }
-        } else if (i == 2) { //game area
+            //}
+        }
+        else if (i == 2) { //the second start window
+            gameFrame = new JFrame("OnyxLand");
+            gameFrame.setSize(700, 700);
+            gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setBackground2(gameFrame);
+
+            gameFrame.setVisible(true);
 
         }
     }
@@ -81,6 +98,19 @@ public class OnyxLandGUI {
         BufferedImage img = null;
         try {
             img = ImageIO.read(new File("src/img/background2.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Image dimg = img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(dimg);
+        menuframe.setContentPane(new JLabel(imageIcon));
+        menuframe.getContentPane().setLayout(new BoxLayout(menuframe.getContentPane(), BoxLayout.PAGE_AXIS));
+    }
+    private void setBackground2(JFrame gameFrame) {
+        //creating backgroung img
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
