@@ -64,7 +64,7 @@ public class MenuPanel extends JPanel{
 
 
         //this.add(newGameButton,BorderLayout.NORTH);
-       // this.add(rulesButton,BorderLayout.CENTER);
+        //this.add(rulesButton,BorderLayout.CENTER);
         //this.add(exitButton,BorderLayout.SOUTH);
 
         this.setLayout(new GridBagLayout());
