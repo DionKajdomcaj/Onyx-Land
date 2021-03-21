@@ -12,8 +12,11 @@ public class OnyxLandGUI {
     public JFrame menuframe;
     public JFrame gameFrame;
     public MenuPanel menupanel;
+    public JLabel moneyOfPlayer;
     public JLabel nameGame;
     private Image background;
+    private Field[][] cells;
+    private Player player;
 
     public OnyxLandGUI(int i){
         if (i == 1) { //if we want to display start menu settings
@@ -81,15 +84,26 @@ public class OnyxLandGUI {
             //}
         }
         else if (i == 2) { //the second start window
-            System.out.println(2);
+
+            player = new Player();
+            moneyOfPlayer = new JLabel();
+
+            moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()));
+
             gameFrame = new JFrame("OnyxLand");
-            gameFrame.setSize(700, 700);
+            gameFrame.setSize(800, 800);
             gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setBackground2(gameFrame);
 
+
+            JButton button = new JButton("Menu");
+            JButton button2 = new JButton("Settings");
+
+            gameFrame.getContentPane().add(button);
+            gameFrame.getContentPane().add(button2);
+            gameFrame.getContentPane().add(moneyOfPlayer);
+
             gameFrame.setVisible(true);
-
-
         }
     }
 
@@ -114,7 +128,7 @@ public class OnyxLandGUI {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Image dimg = img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
         ImageIcon imageIcon = new ImageIcon(dimg);
         gameFrame.setContentPane(new JLabel(imageIcon));
         gameFrame.getContentPane().setLayout(new BoxLayout(gameFrame.getContentPane(), BoxLayout.PAGE_AXIS));
