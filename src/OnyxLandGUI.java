@@ -12,10 +12,10 @@ public class OnyxLandGUI {
     public JFrame menuframe;
     public JFrame gameFrame;
     public MenuPanel menupanel;
-    public JLabel moneyOfPlayer;
+
     public JLabel nameGame;
     private Image background;
-    private Field[][] cells;
+    private Board board;
     private Player player;
 
     public OnyxLandGUI(int i){
@@ -84,25 +84,16 @@ public class OnyxLandGUI {
             //}
         }
         else if (i == 2) { //the second start window
-
             player = new Player();
-            moneyOfPlayer = new JLabel();
+            gameng = new GameEngine();
 
-            moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()));
+
 
             gameFrame = new JFrame("OnyxLand");
             gameFrame.setSize(800, 800);
             gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setBackground2(gameFrame);
-
-
-            JButton button = new JButton("Menu");
-            JButton button2 = new JButton("Settings");
-
-            gameFrame.getContentPane().add(button);
-            gameFrame.getContentPane().add(button2);
-            gameFrame.getContentPane().add(moneyOfPlayer);
-
+            gameFrame.getContentPane().add(gameng);
+            //setBackground2(gameFrame);
             gameFrame.setVisible(true);
         }
     }
