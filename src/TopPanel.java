@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.awt.image.*;
 
 public class TopPanel extends JPanel {
     Player player;
@@ -19,10 +20,9 @@ public class TopPanel extends JPanel {
     JButton settingsButton;
     JLabel numberOfVisitors;
     JLabel averageMood;
-
-    JPanel cashIcon;
-    JPanel moodIcon;
-    JPanel numberOfVisitorsIcon;
+    JLabel moneyOfPlayer_icon;
+    JLabel averageMoodIcon;
+    JLabel numberOfVisitorsIcon;
 
     TopPanel() {
         this.setLayout(new GridLayout(0, 8, 10, 0));
@@ -31,24 +31,31 @@ public class TopPanel extends JPanel {
         moneyOfPlayer.setText("2000");
         moneyOfPlayer.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
 
+        moneyOfPlayer_icon = new JLabel();
+        moneyOfPlayer_icon.setIcon(new ImageIcon("src/img/money.png"));
+
         numberOfVisitors = new JLabel();
         numberOfVisitors.setText("20");
         numberOfVisitors.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
+
+        numberOfVisitorsIcon = new JLabel();
+        numberOfVisitorsIcon.setIcon(new ImageIcon("src/img/visitors.png"));
 
         averageMood = new JLabel();
         averageMood.setText("500");
         averageMood.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
 
-        cashIcon = new JPanel();
-        moodIcon = new JPanel();
-        numberOfVisitorsIcon = new JPanel();
+        averageMoodIcon = new JLabel();
+        averageMoodIcon.setIcon(new ImageIcon("src/img/mood.png"));
 
-        this.add(cashIcon);
+
+        this.add(moneyOfPlayer_icon);
         this.add(moneyOfPlayer);
-        this.add(moodIcon);
-        this.add(averageMood);
         this.add(numberOfVisitorsIcon);
         this.add(numberOfVisitors);
+        this.add(averageMoodIcon);
+        this.add(averageMood);
+
 
         menuButton = new JButton("Menu");
         this.add(menuButton);
