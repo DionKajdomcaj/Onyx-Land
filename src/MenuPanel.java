@@ -63,7 +63,7 @@ public class MenuPanel extends JPanel{
         exitButton.setBackground(new Color(168, 111, 151));
 
 
-        //this.add(newGameButton,BorderLayout.NORTH);
+        //this.add(newGameButton,BorderLayout.G);
        // this.add(rulesButton,BorderLayout.CENTER);
         //this.add(exitButton,BorderLayout.SOUTH);
 

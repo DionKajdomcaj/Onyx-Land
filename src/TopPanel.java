@@ -3,14 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.awt.image.*;
 
 public class TopPanel extends JPanel {
     Player player;
     ArrayList<Visitor> visitors;
     Policeman policeman;
     Thief thief;
-    JLabel moneyOfPlayer;
     Repairman repairman;
     Security security;
     Cleaner cleaner;
@@ -18,6 +16,8 @@ public class TopPanel extends JPanel {
     ArrayList<Staff>staff;
     JButton menuButton;
     JButton settingsButton;
+
+    JLabel moneyOfPlayer;
     JLabel numberOfVisitors;
     JLabel averageMood;
     JLabel moneyOfPlayer_icon;
@@ -30,9 +30,17 @@ public class TopPanel extends JPanel {
         moneyOfPlayer = new JLabel();
         moneyOfPlayer.setText("2000");
         moneyOfPlayer.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
+        //moneyOfPlayer.setBackground(Color.GREEN);
+        //moneyOfPlayer.setOpaque(true);
+       //moneyOfPlayer.setPreferredSize(new Dimension(10,10));
+       //this.getContentPane().setLayout(new FlowLayout());
+        //this.add(moneyOfPlayer);
+       //this.setVisible(true);
+
 
         moneyOfPlayer_icon = new JLabel();
         moneyOfPlayer_icon.setIcon(new ImageIcon("src/img/money.png"));
+        //moneyOfPlayer.setPreferredSize(new Dimension(20,20));
 
         numberOfVisitors = new JLabel();
         numberOfVisitors.setText("20");
