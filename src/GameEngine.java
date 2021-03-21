@@ -42,7 +42,7 @@ public class GameEngine extends JPanel {
             pan.setBackground(Color.WHITE);
             pan.setPreferredSize(new Dimension(3, 3));
             pan.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            //pan.addMouseListener(new BoxListener()); // add a mouse listener to make the panels clickable
+            pan.addMouseListener(new MouseInput());
             pan.setName(count+"");
             ++count;
             add(pan);
@@ -66,18 +66,20 @@ public class GameEngine extends JPanel {
 
 
     //setBackground2(this);
-
-//    @Override
-//    protected void paintComponent(Graphics g) {
-//        super.paintComponent(g);
-//        BufferedImage img = null;
-//        try {
-//            img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
-//        g.drawImage(dimg, 0, 0, null);
-//    }
+/*
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        BufferedImage img = null;
+       try {
+           img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+      }
+        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
+        g.drawImage(dimg, 0, 0, null);
+    }
+    s
+ */
 }
 
