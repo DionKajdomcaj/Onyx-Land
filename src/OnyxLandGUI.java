@@ -7,15 +7,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class OnyxLandGUI {
+public class OnyxLandGUI extends JFrame{
     public GameEngine gameng;
     public JFrame menuframe;
     public JFrame gameFrame;
     public MenuPanel menupanel;
-
+    public JLabel moneyOfPlayer;
     public JLabel nameGame;
     private Image background;
-    private Board board;
+    private Field[][] cells;
     private Player player;
 
     public OnyxLandGUI(int i){
@@ -84,16 +84,21 @@ public class OnyxLandGUI {
             //}
         }
         else if (i == 2) { //the second start window
+
             player = new Player();
-            gameng = new GameEngine();
-
-
+            GameEngine ge = new GameEngine();
+            TopPanel tp = new TopPanel();
 
             gameFrame = new JFrame("OnyxLand");
             gameFrame.setSize(800, 800);
             gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            gameFrame.getContentPane().add(gameng);
+            //gameFrame.setLayout(new GridLayout(50,50));
             //setBackground2(gameFrame);
+            gameFrame.setLayout(new BorderLayout());
+            gameFrame.getContentPane().add(tp, BorderLayout.NORTH);
+            gameFrame.getContentPane().add(ge, BorderLayout.CENTER);
+
+
             gameFrame.setVisible(true);
         }
     }
@@ -111,19 +116,7 @@ public class OnyxLandGUI {
         menuframe.setContentPane(new JLabel(imageIcon));
         menuframe.getContentPane().setLayout(new BoxLayout(menuframe.getContentPane(), BoxLayout.PAGE_AXIS));
     }
-    private void setBackground2(JFrame gameFrame) {
-        //creating backgroung img
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(dimg);
-        gameFrame.setContentPane(new JLabel(imageIcon));
-        gameFrame.getContentPane().setLayout(new BoxLayout(gameFrame.getContentPane(), BoxLayout.PAGE_AXIS));
-    }
+
 
 
 

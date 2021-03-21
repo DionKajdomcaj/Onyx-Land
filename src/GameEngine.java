@@ -1,7 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameEngine extends JPanel {
@@ -15,59 +19,30 @@ public class GameEngine extends JPanel {
     Cleaner cleaner;
     ArrayList<Buildings> buildings;
     ArrayList<Staff>staff;
+    JButton menuButton;
+    JButton settingsButton;
+    JLabel numberOfVisitors;
+    JLabel averageMood;
+
 
 
     public GameEngine(){
         super();
         player=new Player();
-        this.setLayout(new GridBagLayout());
+        visitors=new ArrayList<>();
 
-        moneyOfPlayer = new JLabel();
-        moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()));
-
-
-        /*GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.fill = Grid
-        gbc.insets = new Insets(5,0, 2, 0);*/
-
-
-
-
-        JButton Menu = new JButton("Menu");
-        Menu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                final JFrame f= new JFrame("PopupMenu Example");
-                final JPopupMenu popupmenu = new JPopupMenu("Edit");
-                JMenuItem building = new JMenuItem("Building");
-                popupmenu.add(building);
-            }
-        });
-
-
-        JButton Settings = new JButton("Settings");
-        Settings.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        JPanel container = new JPanel();
-        BorderLayout b = new BorderLayout();
-        container.add(Menu, b.SOUTH);
-        container.add(Settings, b.SOUTH);
-
-
-        /*
-        add(Menu,gbc);
-        add(Settings,gbc);
-        System.out.println(3);*/
-
-
-
+        //setBackground2(this);
     }
-
-
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
+        g.drawImage(dimg, 0, 0, null);
+    }
 }
