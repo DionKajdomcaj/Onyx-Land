@@ -45,7 +45,7 @@ public class OnyxLandGUI extends JFrame{
                         menupanel.startButton.addActionListener(new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
-                                gameng = new GameEngine();
+                                //gameng = new GameEngine(2,2);
                                 System.out.println(1);
                                 menuframe.setVisible(false);
 
@@ -68,16 +68,17 @@ public class OnyxLandGUI extends JFrame{
                 menupanel.rulesButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        menuframe.getContentPane().removeAll();
-                        menuframe.getContentPane().repaint();
-
-                        menuframe.setSize(500, 500);
-                        menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        // i create another Jframe to handle the rules .
+//                        menuframe.getContentPane().removeAll();
+//                        menuframe.getContentPane().repaint();
+//
+//                        menuframe.setSize(500, 500);
+//                        menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                         menupanel = new MenuPanel(3);
                         menuframe.getContentPane().add(menupanel);
 
-                        menuframe.setVisible(true);
+//                        menuframe.setVisible(true);
                     }
                 });
 
@@ -86,7 +87,7 @@ public class OnyxLandGUI extends JFrame{
         else if (i == 2) { //the second start window
 
             player = new Player();
-            GameEngine ge = new GameEngine();
+            GameEngine ge = new GameEngine(30,30);
             TopPanel tp = new TopPanel();
 
             gameFrame = new JFrame("OnyxLand");
