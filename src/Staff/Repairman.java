@@ -1,3 +1,6 @@
+package Staff;
+import Point.Point;
+
 public class Repairman extends Staff {
     public Repairman(Point pos){
         super(pos);

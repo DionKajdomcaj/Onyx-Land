@@ -1,3 +1,5 @@
+package Staff;
+import Point.Point;
 public class Policeman {
     public Point position;
     public Policeman(Point pos){

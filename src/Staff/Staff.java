@@ -1,3 +1,6 @@
+package Staff;
+import Point.Point;
+
 public abstract class Staff {
     private int salaryPerDay  ;
     public Point position;

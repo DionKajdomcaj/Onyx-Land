@@ -1,4 +1,7 @@
+package Staff;
+
 import javax.swing.text.Position;
+import Point.Point;
 
 public class Thief {
     private int skillLevel;
