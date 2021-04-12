@@ -74,7 +74,7 @@ public class TopPanel extends JPanel {
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame f = new JFrame("PopupMenu ");
+                JFrame f = new JFrame("Menu");
                 f.setSize(400,400);
                 f.setLayout(new BoxLayout(f,BoxLayout.Y_AXIS));
                 JPanel popupmenu = new JPanel();
@@ -85,21 +85,125 @@ public class TopPanel extends JPanel {
                 building.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        JFrame restaurants= new JFrame("Restaurants");
+                        //restaurants.getContentPane().setLayout(new BoxLayout(f,BoxLayout.Y_AXIS));
+                        restaurants.setSize(500,500);
                         JPanel sidePop = new JPanel();
-                        sidePop.setLayout(new BoxLayout(sidePop,BoxLayout.Y_AXIS));
+                        setBackground(restaurants);
+                        sidePop.setLayout(new BoxLayout(sidePop,BoxLayout.X_AXIS));
+                        JButton securityBuilding = new JButton("Security Building");
                         JButton Hotdog = new JButton("Hot Dog");
                         JButton sweetShop = new JButton("Candy Shop");
-                        sidePop.add(Hotdog);
-                        sidePop.add(sweetShop);
-                        f.getContentPane().add(sidePop);
+                        JButton IceCreamShop= new JButton("Ice Cream Shop");
+                        JButton atm = new JButton("ATM");
+                        JButton backbutton = new JButton("Back");
+                        backbutton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                restaurants.setVisible(false);
+                                f.setVisible(true);
+                            }
+                        });
+                        JPanel bottom=new JPanel();
+                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
 
+                        //sidePop.add(backbutton);
+                        sidePop.add(atm);
+                        sidePop.add(securityBuilding);
+                        sidePop.add(Hotdog);
+                        sidePop.add(IceCreamShop);
+                        sidePop.add(sweetShop);
+                        bottom.add(backbutton);
+                       // f.getContentPane().removeAll();
+                       // f.getContentPane().add(sidePop);
+
+                        restaurants.getContentPane().add(sidePop);
+                        restaurants.getContentPane().add(bottom);
+
+                        f.setVisible(false);
+                        restaurants.setVisible(true);
+                        restaurants.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+                        restaurants.pack();
                     }
                 });
                 JButton garden = new JButton("Garden");
+                garden.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JFrame gardens= new JFrame("Garden");
+
+                        JPanel sidepop = new JPanel();
+                        setBackground(gardens);
+                        sidepop.setLayout(new BoxLayout(sidepop,BoxLayout.X_AXIS));
+                        JButton tree = new JButton("Tree");
+                        JButton grass = new JButton("Grass");
+                        JButton shrubs = new JButton("Shrubs");
+                        JPanel bottom = new JPanel();
+                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
+                        JButton back = new JButton("Back");
+                        back.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                gardens.setVisible(false);
+                                f.setVisible(true);
+                            }
+                        });
+                        bottom.add(back);
+                        sidepop.add(tree);
+                        sidepop.add(grass);
+                        sidepop.add(shrubs);
+                        gardens.getContentPane().add(sidepop);
+                        gardens.getContentPane().add(bottom);
+                        f.setVisible(false);
+                        gardens.setVisible(true);
+                        gardens.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                        gardens.pack();
+
+
+
+                    }
+                });
                 JButton staff = new JButton("Staff");
+                staff.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JFrame staffHire= new JFrame("Staff");
+
+                        JPanel sidepop = new JPanel();
+                        setBackground(staffHire);
+                        sidepop.setLayout(new BoxLayout(sidepop,BoxLayout.X_AXIS));
+                        JButton cleanerB = new JButton("Cleaner");
+                        JButton repairmanB = new JButton("Repairman");
+                        JButton securityB = new JButton("Security");
+                        JPanel bottom = new JPanel();
+                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
+                        JButton back = new JButton("Back");
+                        back.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                staffHire.setVisible(false);
+                                f.setVisible(true);
+                            }
+                        });
+                        bottom.add(back);
+                        sidepop.add(cleanerB);
+                        sidepop.add(repairmanB);
+                        sidepop.add(securityB);
+                        staffHire.getContentPane().add(sidepop);
+                        staffHire.getContentPane().add(bottom);
+                        f.setVisible(false);
+                        staffHire.setVisible(true);
+                        staffHire.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                        staffHire.pack();
+
+                    }
+                });
+                JButton pathB = new JButton("Path");
                 popupmenu.add(building);
                 popupmenu.add(garden);
                 popupmenu.add(staff);
+                popupmenu.add(pathB);
                 f.getContentPane().add(popupmenu);
                 f.setVisible(true);
                 f.pack();
