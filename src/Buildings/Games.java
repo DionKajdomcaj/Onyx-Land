@@ -1,8 +1,12 @@
+package Buildings;
+import Buildings.Buildings;
+import Point.Point;
+
 public class Games extends Buildings {
     private int maxVisitors;
     private int timeToBuild;
     private int moodImprovement;
-    public Games(String naming, int price, int tprice, int size, int moodImpr,Point pos){
+    public Games(String naming, int price, int tprice, int size, int moodImpr, Point pos){
         super(naming,price,tprice,size,pos);
         this.moodImprovement=moodImpr;
         maxVisitors=10;

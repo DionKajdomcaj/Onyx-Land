@@ -1,3 +1,5 @@
+package Point;
+
 public class Point {
     protected int x,y;
 

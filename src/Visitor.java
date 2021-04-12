@@ -1,4 +1,5 @@
-import java.nio.file.attribute.PosixFileAttributes;
+import Point.Point;
+import Staff.Staff;
 
 public class Visitor {
     private int moneyToSpend;

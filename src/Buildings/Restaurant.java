@@ -1,6 +1,10 @@
+package Buildings;
+import Point.Point;
+import Buildings.Buildings;
+
 public class Restaurant extends Buildings {
     private int moodImprovement;
-    public Restaurant(String naming, int price, int tprice, int size, int moodImpr,Point pos) {
+    public Restaurant(String naming, int price, int tprice, int size, int moodImpr, Point pos) {
         super(naming, price, tprice, size,pos);
         this.moodImprovement=moodImpr;
 

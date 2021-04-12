@@ -1,3 +1,6 @@
+import Buildings.Buildings;
+import Staff.*;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

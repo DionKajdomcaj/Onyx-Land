@@ -1,5 +1,9 @@
-public class Atm extends Buildings {
-    public Atm(String naming, int price, int tprice, int size,Point pos){
+package Buildings;
+import Point.Point;
+import Buildings.Buildings;
+
+public class SecurityBuilding extends Buildings {
+    public SecurityBuilding(String naming, int price, int tprice, int size, Point pos){
         super(naming, price, tprice, size,pos);
     }
     public String GetInfo(){

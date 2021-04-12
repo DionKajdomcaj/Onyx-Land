@@ -1,3 +1,6 @@
+package Buildings;
+import Point.Point;
+
 public abstract class Buildings {
     public String naming;
     protected int price;
@@ -9,7 +12,7 @@ public abstract class Buildings {
     //protected int level;
     public boolean is_builted = false; //is it under construction or was builted and can work
 
-    public Buildings(String n, int p, int tp, int s,Point pos){
+    public Buildings(String n, int p, int tp, int s, Point pos){
         this.naming=n;
         this.price = p;
         this.ticketPrice = tp;
