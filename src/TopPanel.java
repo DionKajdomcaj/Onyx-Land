@@ -83,14 +83,14 @@ public class TopPanel extends JPanel {
                 f.setSize(500,500);
                 //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
                 f.setLayout(new BorderLayout());
+                setBackground(f);
+
+                /*
                 GridBagConstraints constraints = new GridBagConstraints();
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.weightx = 0.5;
-                setBackground(f);
 
-                JPanel container = new JPanel();
-                container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-                container.setLayout(new GridBagLayout());
+
 
                 BufferedImage img = null;
                 try {
@@ -176,7 +176,13 @@ public class TopPanel extends JPanel {
                 container.add(buy, constraints);
                 container.setOpaque(false);
 
-                f.getContentPane().add(container, BorderLayout.CENTER);
+                f.getContentPane().add(container, BorderLayout.CENTER);*/
+
+                /*showObjectProperties(container, f, "Roller Coaster", CONSTANTS.ROLER_COASTER_PRICE,
+                        CONSTANTS.ROLER_COASTER_MOODIMPROVE,
+                        CONSTANTS.ROLER_COASTER_TIME,
+                        CONSTANTS.ROLER_COASTER_TICKET,
+                        CONSTANTS.ROLER_COASTER_SERVICE);*/
 
                 //creating menu
                 JMenuBar menuBar = new JMenuBar();
@@ -185,13 +191,51 @@ public class TopPanel extends JPanel {
                 JMenu foods = new JMenu("Food Courts");
                 JMenu gardens = new JMenu("Gardens");
 
-                String[] amusementsNames = {"Roller Coaster", "Swing", "Wooden Chute", "Trampoline", "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
+                String[] amusementsNames = {"Roller Coaster", "Swing", "Wooden Chute", "Trampoline" };//, "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
                 for (String s: amusementsNames) {
                     JMenuItem i = new JMenuItem(s);
                     i.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
+                            JPanel container = new JPanel();
+                            container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                            container.setLayout(new GridBagLayout());
 
+                            f.getContentPane().removeAll();
+                            f.getContentPane().repaint();
+                            f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                            f.setSize(500,500);
+                            //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                            f.setLayout(new BorderLayout());
+                            setBackground(f);
+
+                            switch (s) {
+                                case "Roller Coaster":
+                                    showObjectProperties(container, f, s, CONSTANTS.ROLER_COASTER_PRICE,
+                                                                          CONSTANTS.ROLER_COASTER_MOODIMPROVE,
+                                                                          CONSTANTS.ROLER_COASTER_TIME,
+                                                                          CONSTANTS.ROLER_COASTER_TICKET,
+                                                                          CONSTANTS.ROLER_COASTER_SERVICE);
+                                    break;
+                                case "Swing":
+                                    showObjectProperties(container, f, s, CONSTANTS.SWING_PRICE,
+                                            CONSTANTS.SWING_MOODIMPROVE,
+                                            CONSTANTS.SWING_TIME,
+                                            CONSTANTS.SWING_TICKET,
+                                            CONSTANTS.SWING_SERVICE);
+                                    break;
+
+                                case "Wooden Chute":
+                                    showObjectProperties(container, f, s, CONSTANTS.CHUTE_PRICE,
+                                            CONSTANTS.CHUTE_MOODIMPROVE,
+                                            CONSTANTS.CHUTE_TIME,
+                                            CONSTANTS.CHUTE_TICKET,
+                                            CONSTANTS.CHUTE_SERVICE);
+                                    break;
+
+                            }
+
+                            f.setVisible(true);
                         }
                     });
                     amusements.add(i);
@@ -203,13 +247,13 @@ public class TopPanel extends JPanel {
                     paths.add(i);
                 }
 
-                String[] foodsNames = {"Drinking Fountain", "Snack Bar", "Cocktails", "Ice Cream", "Fruit stand", "Sushi Bar", "Restaurant", "Cafe", "Hot-Dogs"};
+                String[] foodsNames = {"Drinking Fountain", "Snack Bar", "Restaurant", "Cafe", "Hot-Dogs"};
                 for (String s: foodsNames) {
                     JMenuItem i = new JMenuItem(s);
                     foods.add(i);
                 }
 
-                String[] gardenNames = {"Palm Tree", "Grass", "Flowers Shrub 1", "Flowers Shrub 2", "Mini-Forest", "Tall tree", "Thick tree"};
+                String[] gardenNames = {"Palm Tree", "Grass", "Flowers Shrub", "Mini Forest"};//, "Tall tree", "Thick tree"};
                 for (String s: foodsNames) {
                     JMenuItem i = new JMenuItem(s);
                     gardens.add(i);
@@ -424,5 +468,104 @@ public class TopPanel extends JPanel {
         JLabel l = new JLabel(imageIcon);
 
         return l;
+    }
+
+    private void showObjectProperties(JPanel container, JFrame f, String object_naming,
+                                                                  String object_price,
+                                                                  String object_mood_improvement,
+                                                                  String object_time_to_build,
+                                                                  String object_ticket_cost,
+                                                                  String object_service) {
+        System.out.println(object_naming);
+
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.weightx = 0.5;
+
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(this.getClass().getResource("img/RolerCoaster.JPG"));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        Image dimg = img.getScaledInstance(250, 250, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(dimg);
+        JLabel pic = new JLabel(imageIcon);
+        GridBagConstraints constraintsPic = new GridBagConstraints();
+        constraintsPic.fill = GridBagConstraints.HORIZONTAL;
+        constraintsPic.weightx = 0.5;
+        constraintsPic.weightx   = 1.0;
+        constraintsPic.anchor    = GridBagConstraints.PAGE_START;
+        constraintsPic.insets    = new Insets(10, 20, 20, 10);  // граница ячейки по Y
+        constraintsPic.gridwidth = 8;    // размер кнопки в две ячейки
+        constraintsPic.gridx = 0;      // нулевая ячейка таблицы по горизонтали
+        constraintsPic.gridy = 1;      // нулевая ячейка таблицы по горизонтали
+        container.add(pic, constraintsPic);
+
+        JLabel naming = new JLabel(object_naming);
+        naming.setFont(new Font("Bernard MT Condensed",Font.PLAIN,35));
+        naming.setForeground(new Color(212, 210, 210));
+        constraints.gridwidth = 3;
+        constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 0;      // нулевая ячейка таблицы по горизонтали
+        container.add(naming, constraints);
+
+        constraints.gridwidth = 1;
+
+        JLabel price_icon = createIcon("img/money.png");
+        constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
+        container.add(price_icon, constraints);
+        JLabel price = new JLabel(object_price);
+        constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
+        container.add(price, constraints);
+
+        JLabel mood_icon = createIcon("img/moodImprove.png");
+        constraints.gridx = 0;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+        container.add(mood_icon, constraints);
+        JLabel moodImprovement = new JLabel(object_mood_improvement);
+        constraints.gridx     = 1;    // нулевая ячейка по горизонтали
+        constraints.gridy     = 3;    // первая ячейка по вертикали
+        container.add(moodImprovement, constraints);
+
+        JLabel time_icon = createIcon("img/clock.png");
+        constraints.gridx = 2;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+        container.add(time_icon, constraints);
+        JLabel timeToBuild = new JLabel(object_time_to_build);
+        constraints.gridx     = 3;    // нулевая ячейка по горизонтали
+        constraints.gridy     = 3;    // первая ячейка по вертикали
+        container.add(timeToBuild, constraints);
+
+        JLabel ticket_icon = createIcon("img/ticket.png");
+        constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+        container.add(ticket_icon, constraints);
+        JLabel ticketCost = new JLabel(object_ticket_cost);
+        constraints.gridx     = 5;    // нулевая ячейка по горизонтали
+        constraints.gridy     = 3;    // первая ячейка по вертикали
+        container.add(ticketCost, constraints);
+
+        JLabel service_icon = createIcon("img/service.png");
+        constraints.gridx = 6;      // нулевая ячейка таблицы по горизонтали
+        constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+        container.add(service_icon, constraints);
+        JLabel serviceCost = new JLabel(object_service);
+        constraints.gridx     = 7;    // нулевая ячейка по горизонтали
+        constraints.gridy     = 3;    // первая ячейка по вертикали
+        container.add(serviceCost, constraints);
+
+        JButton buy = new JButton("Buy");
+        constraints.gridx     = 3;    // нулевая ячейка по горизонтали
+        constraints.gridy     = 4;    // первая ячейка по вертикали
+        constraints.gridwidth = 2;    // размер кнопки в две ячейки
+        constraints.ipady     = 20;   // кнопка высокая
+        constraints.insets = new Insets(10, 0, 10, 0);  // граница ячейки по Y
+        container.add(buy, constraints);
+        container.setOpaque(false);
+
+        f.getContentPane().add(container, BorderLayout.CENTER);
     }
 }
