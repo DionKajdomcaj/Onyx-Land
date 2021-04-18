@@ -204,7 +204,7 @@ public class TopPanel extends JPanel {
                             f.getContentPane().removeAll();
                             f.getContentPane().repaint();
                             f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                            f.setSize(500,500);
+                            //f.setSize(500,500);
                             //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
                             f.setLayout(new BorderLayout());
                             setBackground(f);
