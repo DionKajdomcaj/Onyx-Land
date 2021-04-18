@@ -80,9 +80,17 @@ public class TopPanel extends JPanel {
 
                 JFrame f = new JFrame("Menu");
                 f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                f.setSize(400,400);
-                f.setLayout(new BoxLayout(f,BoxLayout.Y_AXIS));
+                f.setSize(500,500);
+                //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                f.setLayout(new BorderLayout());
+                GridBagConstraints constraints = new GridBagConstraints();
+                constraints.fill = GridBagConstraints.HORIZONTAL;
+                constraints.weightx = 0.5;
                 setBackground(f);
+
+                JPanel container = new JPanel();
+                container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                container.setLayout(new GridBagLayout());
 
                 BufferedImage img = null;
                 try {
@@ -90,11 +98,85 @@ public class TopPanel extends JPanel {
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
-                Image dimg = img.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+                Image dimg = img.getScaledInstance(250, 250, Image.SCALE_SMOOTH);
                 ImageIcon imageIcon = new ImageIcon(dimg);
+                JLabel pic = new JLabel(imageIcon);
+                GridBagConstraints constraintsPic = new GridBagConstraints();
+                constraintsPic.fill = GridBagConstraints.HORIZONTAL;
+                constraintsPic.weightx = 0.5;
+                constraintsPic.weightx   = 1.0;
+                constraintsPic.anchor    = GridBagConstraints.PAGE_START;
+                constraintsPic.insets    = new Insets(10, 20, 20, 10);  // граница ячейки по Y
+                constraintsPic.gridwidth = 8;    // размер кнопки в две ячейки
+                constraintsPic.gridx = 0;      // нулевая ячейка таблицы по горизонтали
+                constraintsPic.gridy = 1;      // нулевая ячейка таблицы по горизонтали
+                container.add(pic, constraintsPic);
 
-                JLabel wIcon = new JLabel(imageIcon);
-                f.add(wIcon, BorderLayout.CENTER);
+                JLabel naming = new JLabel("Roler Coaster");
+                naming.setFont(new Font("Bernard MT Condensed",Font.PLAIN,35));
+                naming.setForeground(new Color(212, 210, 210));
+                constraints.gridwidth = 3;
+                constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 0;      // нулевая ячейка таблицы по горизонтали
+                container.add(naming, constraints);
+
+                constraints.gridwidth = 1;
+
+                JLabel price_icon = createIcon("img/money.png");
+                constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
+                container.add(price_icon, constraints);
+                JLabel price = new JLabel("500");
+                constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
+                container.add(price, constraints);
+
+                JLabel mood_icon = createIcon("img/moodImprove.png");
+                constraints.gridx = 0;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+                container.add(mood_icon, constraints);
+                JLabel moodImprovement = new JLabel("20");
+                constraints.gridx     = 1;    // нулевая ячейка по горизонтали
+                constraints.gridy     = 3;    // первая ячейка по вертикали
+                container.add(moodImprovement, constraints);
+
+                JLabel time_icon = createIcon("img/clock.png");
+                constraints.gridx = 2;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+                container.add(time_icon, constraints);
+                JLabel timeToBuild = new JLabel("2:40");
+                constraints.gridx     = 3;    // нулевая ячейка по горизонтали
+                constraints.gridy     = 3;    // первая ячейка по вертикали
+                container.add(timeToBuild, constraints);
+
+                JLabel ticket_icon = createIcon("img/ticket.png");
+                constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+                container.add(ticket_icon, constraints);
+                JLabel ticketCost = new JLabel("20");
+                constraints.gridx     = 5;    // нулевая ячейка по горизонтали
+                constraints.gridy     = 3;    // первая ячейка по вертикали
+                container.add(ticketCost, constraints);
+
+                JLabel service_icon = createIcon("img/service.png");
+                constraints.gridx = 6;      // нулевая ячейка таблицы по горизонтали
+                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
+                container.add(service_icon, constraints);
+                JLabel serviceCost = new JLabel("45");
+                constraints.gridx     = 7;    // нулевая ячейка по горизонтали
+                constraints.gridy     = 3;    // первая ячейка по вертикали
+                container.add(serviceCost, constraints);
+
+                JButton buy = new JButton("Buy");
+                constraints.gridx     = 3;    // нулевая ячейка по горизонтали
+                constraints.gridy     = 4;    // первая ячейка по вертикали
+                constraints.gridwidth = 2;    // размер кнопки в две ячейки
+                constraints.ipady     = 20;   // кнопка высокая
+                constraints.insets = new Insets(10, 0, 10, 0);  // граница ячейки по Y
+                container.add(buy, constraints);
+                container.setOpaque(false);
+
+                f.getContentPane().add(container, BorderLayout.CENTER);
 
                 //creating menu
                 JMenuBar menuBar = new JMenuBar();
@@ -330,4 +412,17 @@ public class TopPanel extends JPanel {
         menuframe.getContentPane().setLayout(new BoxLayout(menuframe.getContentPane(), BoxLayout.PAGE_AXIS));
     }
 
+    private JLabel createIcon(String src) {
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(this.getClass().getResource(src));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        Image dimg = img.getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(dimg);
+        JLabel l = new JLabel(imageIcon);
+
+        return l;
+    }
 }
