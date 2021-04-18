@@ -77,13 +77,74 @@ public class TopPanel extends JPanel {
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 JFrame f = new JFrame("Menu");
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 f.setSize(400,400);
                 f.setLayout(new BoxLayout(f,BoxLayout.Y_AXIS));
-                JPanel popupmenu = new JPanel();
-                popupmenu.setLayout(new BoxLayout(popupmenu,BoxLayout.X_AXIS));
-                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 setBackground(f);
+
+                BufferedImage img = null;
+                try {
+                    img = ImageIO.read(this.getClass().getResource("img/RolerCoaster.JPG"));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                Image dimg = img.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+                ImageIcon imageIcon = new ImageIcon(dimg);
+
+                JLabel wIcon = new JLabel(imageIcon);
+                f.add(wIcon, BorderLayout.CENTER);
+
+                //creating menu
+                JMenuBar menuBar = new JMenuBar();
+                JMenu amusements = new JMenu("Amusements");
+                JMenu paths = new JMenu("Paths");
+                JMenu foods = new JMenu("Food Courts");
+                JMenu gardens = new JMenu("Gardens");
+
+                String[] amusementsNames = {"Roller Coaster", "Swing", "Wooden Chute", "Trampoline", "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
+                for (String s: amusementsNames) {
+                    JMenuItem i = new JMenuItem(s);
+                    i.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+
+                        }
+                    });
+                    amusements.add(i);
+                }
+
+                String[] pathsNames = {"Dirt Path", "Stone Path", "Decorative path", "Golden Path"};
+                for (String s: pathsNames) {
+                    JMenuItem i = new JMenuItem(s);
+                    paths.add(i);
+                }
+
+                String[] foodsNames = {"Drinking Fountain", "Snack Bar", "Cocktails", "Ice Cream", "Fruit stand", "Sushi Bar", "Restaurant", "Cafe", "Hot-Dogs"};
+                for (String s: foodsNames) {
+                    JMenuItem i = new JMenuItem(s);
+                    foods.add(i);
+                }
+
+                String[] gardenNames = {"Palm Tree", "Grass", "Flowers Shrub 1", "Flowers Shrub 2", "Mini-Forest", "Tall tree", "Thick tree"};
+                for (String s: foodsNames) {
+                    JMenuItem i = new JMenuItem(s);
+                    gardens.add(i);
+                }
+
+                menuBar.add(amusements);
+                menuBar.add(paths);
+                menuBar.add(foods);
+                menuBar.add(gardens);
+
+                f.setJMenuBar(menuBar);
+
+
+
+
+                /*JPanel popupmenu = new JPanel();
+                popupmenu.setLayout(new BoxLayout(popupmenu,BoxLayout.X_AXIS));
                 JButton building = new JButton("Building");
                 building.addActionListener(new ActionListener() {
                     @Override
@@ -94,6 +155,7 @@ public class TopPanel extends JPanel {
                         JPanel sidePop = new JPanel();
                         setBackground(restaurants);
                         sidePop.setLayout(new BoxLayout(sidePop,BoxLayout.X_AXIS));
+
                         JButton securityBuilding = new JButton("Security Building");
                         JButton Hotdog = new JButton("Hot Dog");
                         JButton sweetShop = new JButton("Candy Shop");
@@ -117,6 +179,7 @@ public class TopPanel extends JPanel {
                         sidePop.add(IceCreamShop);
                         sidePop.add(sweetShop);
                         bottom.add(backbutton);
+
                        // f.getContentPane().removeAll();
                        // f.getContentPane().add(sidePop);
 
@@ -203,16 +266,18 @@ public class TopPanel extends JPanel {
                     }
                 });
                 JButton pathB = new JButton("Path");
+
                 popupmenu.add(building);
                 popupmenu.add(garden);
                 popupmenu.add(staff);
                 popupmenu.add(pathB);
-                f.getContentPane().add(popupmenu);
+
+                f.getContentPane().add(popupmenu);*/
+
                 f.setVisible(true);
                 f.pack();
             }
         });
-
 
         settingsButton = new JButton("Settings");
         this.add(settingsButton);
