@@ -73,6 +73,10 @@ public class TopPanel extends JPanel {
 
 
         menuButton = new JButton("Menu");
+        menuButton.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        menuButton.setForeground(new Color(74, 59, 91));
+        //menuButton.setPreferredSize(new Dimension(100,60));
+        menuButton.setBackground(new Color(168, 111, 151));
         this.add(menuButton);
         menuButton.addActionListener(new ActionListener() {
             @Override
@@ -211,14 +215,17 @@ public class TopPanel extends JPanel {
 
                             switch (s) {
                                 case "Roller Coaster":
-                                    showObjectProperties(container, f, s, CONSTANTS.ROLER_COASTER_PRICE,
+                                    showObjectProperties(container, f, s, CONSTANTS.ROLER_COASTER_URL,
+                                                                          CONSTANTS.ROLER_COASTER_PRICE,
                                                                           CONSTANTS.ROLER_COASTER_MOODIMPROVE,
                                                                           CONSTANTS.ROLER_COASTER_TIME,
                                                                           CONSTANTS.ROLER_COASTER_TICKET,
                                                                           CONSTANTS.ROLER_COASTER_SERVICE);
                                     break;
                                 case "Swing":
-                                    showObjectProperties(container, f, s, CONSTANTS.SWING_PRICE,
+                                    showObjectProperties(container, f, s,
+                                            CONSTANTS.SWING_URL,
+                                            CONSTANTS.SWING_PRICE,
                                             CONSTANTS.SWING_MOODIMPROVE,
                                             CONSTANTS.SWING_TIME,
                                             CONSTANTS.SWING_TICKET,
@@ -226,13 +233,24 @@ public class TopPanel extends JPanel {
                                     break;
 
                                 case "Wooden Chute":
-                                    showObjectProperties(container, f, s, CONSTANTS.CHUTE_PRICE,
+                                    showObjectProperties(container, f, s,
+                                            CONSTANTS.CHUTE_URL,
+                                            CONSTANTS.CHUTE_PRICE,
                                             CONSTANTS.CHUTE_MOODIMPROVE,
                                             CONSTANTS.CHUTE_TIME,
                                             CONSTANTS.CHUTE_TICKET,
                                             CONSTANTS.CHUTE_SERVICE);
                                     break;
 
+                                case "Trampoline":
+                                    showObjectProperties(container, f, s,
+                                            CONSTANTS.TRAMPOLINE_URL,
+                                            CONSTANTS.TRAMPOLINE_PRICE,
+                                            CONSTANTS.TRAMPOLINE_MOODIMPROVE,
+                                            CONSTANTS.TRAMPOLINE_TIME,
+                                            CONSTANTS.TRAMPOLINE_TICKET,
+                                            CONSTANTS.TRAMPOLINE_SERVICE);
+                                    break;
                             }
 
                             f.setVisible(true);
@@ -406,6 +424,10 @@ public class TopPanel extends JPanel {
         });
 
         settingsButton = new JButton("Settings");
+        settingsButton.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        settingsButton.setForeground(new Color(74, 59, 91));
+        //settingsButton.setPreferredSize(new Dimension(100,60));
+        settingsButton.setBackground(new Color(168, 111, 151));
         this.add(settingsButton);
         settingsButton.addActionListener(new ActionListener() {
             @Override
@@ -446,7 +468,7 @@ public class TopPanel extends JPanel {
         //creating backgroung img
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("src/img/background2.jpg"));
+            img = ImageIO.read(new File("src/img/background3.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -471,6 +493,7 @@ public class TopPanel extends JPanel {
     }
 
     private void showObjectProperties(JPanel container, JFrame f, String object_naming,
+                                                                  String object_pic_url,
                                                                   String object_price,
                                                                   String object_mood_improvement,
                                                                   String object_time_to_build,
@@ -484,7 +507,7 @@ public class TopPanel extends JPanel {
 
         BufferedImage img = null;
         try {
-            img = ImageIO.read(this.getClass().getResource("img/RolerCoaster.JPG"));
+            img = ImageIO.read(this.getClass().getResource(object_pic_url));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -504,7 +527,7 @@ public class TopPanel extends JPanel {
 
         JLabel naming = new JLabel(object_naming);
         naming.setFont(new Font("Bernard MT Condensed",Font.PLAIN,35));
-        naming.setForeground(new Color(212, 210, 210));
+        naming.setForeground(new Color(103, 78, 107));
         constraints.gridwidth = 3;
         constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
         constraints.gridy = 0;      // нулевая ячейка таблицы по горизонтали
@@ -517,6 +540,8 @@ public class TopPanel extends JPanel {
         constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
         container.add(price_icon, constraints);
         JLabel price = new JLabel(object_price);
+        price.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        price.setForeground(new Color(38, 35, 37));
         constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
         constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
         container.add(price, constraints);
@@ -526,6 +551,8 @@ public class TopPanel extends JPanel {
         constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
         container.add(mood_icon, constraints);
         JLabel moodImprovement = new JLabel(object_mood_improvement);
+        moodImprovement.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        moodImprovement.setForeground(new Color(38, 35, 37));
         constraints.gridx     = 1;    // нулевая ячейка по горизонтали
         constraints.gridy     = 3;    // первая ячейка по вертикали
         container.add(moodImprovement, constraints);
@@ -535,6 +562,8 @@ public class TopPanel extends JPanel {
         constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
         container.add(time_icon, constraints);
         JLabel timeToBuild = new JLabel(object_time_to_build);
+        timeToBuild.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        timeToBuild.setForeground(new Color(38, 35, 37));
         constraints.gridx     = 3;    // нулевая ячейка по горизонтали
         constraints.gridy     = 3;    // первая ячейка по вертикали
         container.add(timeToBuild, constraints);
@@ -544,6 +573,8 @@ public class TopPanel extends JPanel {
         constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
         container.add(ticket_icon, constraints);
         JLabel ticketCost = new JLabel(object_ticket_cost);
+        ticketCost.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        ticketCost.setForeground(new Color(38, 35, 37));
         constraints.gridx     = 5;    // нулевая ячейка по горизонтали
         constraints.gridy     = 3;    // первая ячейка по вертикали
         container.add(ticketCost, constraints);
@@ -553,16 +584,31 @@ public class TopPanel extends JPanel {
         constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
         container.add(service_icon, constraints);
         JLabel serviceCost = new JLabel(object_service);
+        serviceCost.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        serviceCost.setForeground(new Color(38, 35, 37));
         constraints.gridx     = 7;    // нулевая ячейка по горизонтали
         constraints.gridy     = 3;    // первая ячейка по вертикали
         container.add(serviceCost, constraints);
 
-        JButton buy = new JButton("Buy");
+        JButton buy = new JButton("BUY");
         constraints.gridx     = 3;    // нулевая ячейка по горизонтали
         constraints.gridy     = 4;    // первая ячейка по вертикали
         constraints.gridwidth = 2;    // размер кнопки в две ячейки
         constraints.ipady     = 20;   // кнопка высокая
         constraints.insets = new Insets(10, 0, 10, 0);  // граница ячейки по Y
+        buy.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        buy.setForeground(new Color(74, 59, 91));
+        buy.setPreferredSize(new Dimension(100,60));
+        buy.setBackground(new Color(168, 111, 151));
+
+        buy.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+
+            }
+        });
+
         container.add(buy, constraints);
         container.setOpaque(false);
 

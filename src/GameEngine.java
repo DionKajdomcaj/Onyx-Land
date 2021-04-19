@@ -6,8 +6,12 @@ import Staff.Security;
 import Staff.Cleaner;
 import Staff.Thief;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameEngine extends JPanel {
@@ -37,18 +41,18 @@ public class GameEngine extends JPanel {
         setLayout(new GridLayout(row, col));
         setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        for (int i = 1; i <= (row * col); i++) {
+        /*for (int i = 1; i <= (row * col); i++) {
             JPanel pan = new JPanel();
 
             pan.setEnabled(true);
             pan.setBackground(Color.WHITE);
-            pan.setPreferredSize(new Dimension(3, 3));
+            pan.setPreferredSize(new Dimension(10, 10));
             pan.setBorder(BorderFactory.createLineBorder(Color.BLACK));
             pan.addMouseListener(new MouseInput());
             pan.setName(count+"");
             ++count;
             add(pan);
-        }
+        }*/
     }
 
 
@@ -68,13 +72,13 @@ public class GameEngine extends JPanel {
 
 
     //setBackground2(this);
-/*
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         BufferedImage img = null;
        try {
-           img = ImageIO.read(new File("src/img/green-grass-textures.jpg"));
+           img = ImageIO.read(new File("src/img/ground2.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
       }
@@ -82,6 +86,6 @@ public class GameEngine extends JPanel {
         g.drawImage(dimg, 0, 0, null);
     }
 
- */
+
 }
 

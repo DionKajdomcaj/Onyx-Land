@@ -5,24 +5,29 @@ public class CONSTANTS {
     static public final String ROLER_COASTER_TIME = "2:40";
     static public final String ROLER_COASTER_TICKET = "10";
     static public final String ROLER_COASTER_SERVICE = "60";
+    static public final String ROLER_COASTER_URL = "img/RolerCoaster.JPG";
 
     static public final String SWING_PRICE = "100";
     static public final String SWING_MOODIMPROVE = "2";
     static public final String SWING_TIME = "0:30";
     static public final String SWING_TICKET = "3";
     static public final String SWING_SERVICE = "10";
+    static public final String SWING_URL = "img/swing.JPG";
+
 
     static public final String CHUTE_PRICE = "150";
     static public final String CHUTE_MOODIMPROVE = "3";
     static public final String CHUTE_TIME = "0:45";
     static public final String CHUTE_TICKET = "4";
     static public final String CHUTE_SERVICE = "15";
+    static public final String CHUTE_URL = "img/shute.JPG";
 
     static public final String TRAMPOLINE_PRICE = "190";
     static public final String TRAMPOLINE_MOODIMPROVE = "6";
     static public final String TRAMPOLINE_TIME = "1:00";
     static public final String TRAMPOLINE_TICKET = "5";
     static public final String TRAMPOLINE_SERVICE = "20";
+    static public final String TRAMPOLINE_URL = "img/trampoline.jpg";
 
     static public final String DIRT_PATH_PRICE = "5";
     static public final String DIRT_PATH_MOODIMPROVE = "0";
