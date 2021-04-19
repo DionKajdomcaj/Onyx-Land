@@ -20,105 +20,6 @@ public class Menu extends JFrame {
         f.setLayout(new BorderLayout());
         setBackground(f);
 
-                /*
-                GridBagConstraints constraints = new GridBagConstraints();
-                constraints.fill = GridBagConstraints.HORIZONTAL;
-                constraints.weightx = 0.5;
-
-
-
-                BufferedImage img = null;
-                try {
-                    img = ImageIO.read(this.getClass().getResource("img/RolerCoaster.JPG"));
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-                Image dimg = img.getScaledInstance(250, 250, Image.SCALE_SMOOTH);
-                ImageIcon imageIcon = new ImageIcon(dimg);
-                JLabel pic = new JLabel(imageIcon);
-                GridBagConstraints constraintsPic = new GridBagConstraints();
-                constraintsPic.fill = GridBagConstraints.HORIZONTAL;
-                constraintsPic.weightx = 0.5;
-                constraintsPic.weightx   = 1.0;
-                constraintsPic.anchor    = GridBagConstraints.PAGE_START;
-                constraintsPic.insets    = new Insets(10, 20, 20, 10);  // граница ячейки по Y
-                constraintsPic.gridwidth = 8;    // размер кнопки в две ячейки
-                constraintsPic.gridx = 0;      // нулевая ячейка таблицы по горизонтали
-                constraintsPic.gridy = 1;      // нулевая ячейка таблицы по горизонтали
-                container.add(pic, constraintsPic);
-
-                JLabel naming = new JLabel("Roler Coaster");
-                naming.setFont(new Font("Bernard MT Condensed",Font.PLAIN,35));
-                naming.setForeground(new Color(212, 210, 210));
-                constraints.gridwidth = 3;
-                constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 0;      // нулевая ячейка таблицы по горизонтали
-                container.add(naming, constraints);
-
-                constraints.gridwidth = 1;
-
-                JLabel price_icon = createIcon("img/money.png");
-                constraints.gridx = 3;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
-                container.add(price_icon, constraints);
-                JLabel price = new JLabel("500");
-                constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 2;      // нулевая ячейка таблицы по горизонтали
-                container.add(price, constraints);
-
-                JLabel mood_icon = createIcon("img/moodImprove.png");
-                constraints.gridx = 0;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
-                container.add(mood_icon, constraints);
-                JLabel moodImprovement = new JLabel("20");
-                constraints.gridx     = 1;    // нулевая ячейка по горизонтали
-                constraints.gridy     = 3;    // первая ячейка по вертикали
-                container.add(moodImprovement, constraints);
-
-                JLabel time_icon = createIcon("img/clock.png");
-                constraints.gridx = 2;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
-                container.add(time_icon, constraints);
-                JLabel timeToBuild = new JLabel("2:40");
-                constraints.gridx     = 3;    // нулевая ячейка по горизонтали
-                constraints.gridy     = 3;    // первая ячейка по вертикали
-                container.add(timeToBuild, constraints);
-
-                JLabel ticket_icon = createIcon("img/ticket.png");
-                constraints.gridx = 4;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
-                container.add(ticket_icon, constraints);
-                JLabel ticketCost = new JLabel("20");
-                constraints.gridx     = 5;    // нулевая ячейка по горизонтали
-                constraints.gridy     = 3;    // первая ячейка по вертикали
-                container.add(ticketCost, constraints);
-
-                JLabel service_icon = createIcon("img/service.png");
-                constraints.gridx = 6;      // нулевая ячейка таблицы по горизонтали
-                constraints.gridy = 3;      // нулевая ячейка таблицы по горизонтали
-                container.add(service_icon, constraints);
-                JLabel serviceCost = new JLabel("45");
-                constraints.gridx     = 7;    // нулевая ячейка по горизонтали
-                constraints.gridy     = 3;    // первая ячейка по вертикали
-                container.add(serviceCost, constraints);
-
-                JButton buy = new JButton("Buy");
-                constraints.gridx     = 3;    // нулевая ячейка по горизонтали
-                constraints.gridy     = 4;    // первая ячейка по вертикали
-                constraints.gridwidth = 2;    // размер кнопки в две ячейки
-                constraints.ipady     = 20;   // кнопка высокая
-                constraints.insets = new Insets(10, 0, 10, 0);  // граница ячейки по Y
-                container.add(buy, constraints);
-                container.setOpaque(false);
-
-                f.getContentPane().add(container, BorderLayout.CENTER);*/
-
-                /*showObjectProperties(container, f, "Roller Coaster", CONSTANTS.CONSTANTS.ROLER_COASTER_PRICE,
-                        CONSTANTS.CONSTANTS.ROLER_COASTER_MOODIMPROVE,
-                        CONSTANTS.CONSTANTS.ROLER_COASTER_TIME,
-                        CONSTANTS.CONSTANTS.ROLER_COASTER_TICKET,
-                        CONSTANTS.CONSTANTS.ROLER_COASTER_SERVICE);*/
-
         //creating menu
         JMenuBar menuBar = new JMenuBar();
         JMenu amusements = new JMenu("Amusements");
@@ -193,12 +94,139 @@ public class Menu extends JFrame {
         String[] pathsNames = {"Dirt Path", "Stone Path", "Decorative path", "Golden Path"};
         for (String s: pathsNames) {
             JMenuItem i = new JMenuItem(s);
+            i.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JPanel container = new JPanel();
+                    container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    container.setLayout(new GridBagLayout());
+
+                    f.getContentPane().removeAll();
+                    f.getContentPane().repaint();
+                    f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    //f.setSize(500,500);
+                    //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    f.setLayout(new BorderLayout());
+                    setBackground(f);
+
+                    switch (s) {
+                        case "Dirt Path":
+                            showObjectProperties(container, f, s, CONSTANTS.DIRT_PATH_URL,
+                                    CONSTANTS.DIRT_PATH_PRICE,
+                                    CONSTANTS.DIRT_PATH_MOODIMPROVE,
+                                    CONSTANTS.DIRT_PATH_TIME,
+                                    CONSTANTS.DIRT_PATH_TICKET,
+                                    CONSTANTS.DIRT_PATH_SERVICE);
+                            break;
+                        case "Stone Path":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.STONE_PATH_URL,
+                                    CONSTANTS.STONE_PATH_PRICE,
+                                    CONSTANTS.STONE_PATH_MOODIMPROVE,
+                                    CONSTANTS.STONE_PATH_TIME,
+                                    CONSTANTS.STONE_PATH_TICKET,
+                                    CONSTANTS.STONE_PATH_SERVICE);
+                            break;
+
+                        case "Decorative path":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.DECORATIVE_PATH_URL,
+                                    CONSTANTS.DECORATIVE_PATH_PRICE,
+                                    CONSTANTS.DECORATIVE_PATH_MOODIMPROVE,
+                                    CONSTANTS.DECORATIVE_PATH_TIME,
+                                    CONSTANTS.DECORATIVE_PATH_TICKET,
+                                    CONSTANTS.DECORATIVE_PATH_SERVICE);
+                            break;
+
+                        case "Golden Path":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.GOLDEN_PATH_URL,
+                                    CONSTANTS.GOLDEN_PATH_PRICE,
+                                    CONSTANTS.GOLDEN_PATH_MOODIMPROVE,
+                                    CONSTANTS.GOLDEN_PATH_TIME,
+                                    CONSTANTS.GOLDEN_PATH_TICKET,
+                                    CONSTANTS.GOLDEN_PATH_SERVICE);
+                            break;
+                    }
+
+                    f.setVisible(true);
+                }
+            });
             paths.add(i);
         }
 
         String[] foodsNames = {"Drinking Fountain", "Snack Bar", "Restaurant", "Cafe", "Hot-Dogs"};
         for (String s: foodsNames) {
             JMenuItem i = new JMenuItem(s);
+            i.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JPanel container = new JPanel();
+                    container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    container.setLayout(new GridBagLayout());
+
+                    f.getContentPane().removeAll();
+                    f.getContentPane().repaint();
+                    f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    //f.setSize(500,500);
+                    //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    f.setLayout(new BorderLayout());
+                    setBackground(f);
+
+                    switch (s) {
+                        case "Drinking Fountain":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.DRINKING_FOUNTAIN_URL,
+                                    CONSTANTS.DRINKING_FOUNTAIN_PRICE,
+                                    CONSTANTS.DRINKING_FOUNTAIN_MOODIMPROVE,
+                                    CONSTANTS.DRINKING_FOUNTAIN_TIME,
+                                    CONSTANTS.DRINKING_FOUNTAIN_TICKET,
+                                    CONSTANTS.DRINKING_FOUNTAIN_SERVICE);
+                            break;
+                        case "Snack Bar":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.SNACK_BAR_URL,
+                                    CONSTANTS.SNACK_BAR_PRICE,
+                                    CONSTANTS.SNACK_BAR_MOODIMPROVE,
+                                    CONSTANTS.SNACK_BAR_TIME,
+                                    CONSTANTS.SNACK_BAR_TICKET,
+                                    CONSTANTS.SNACK_BAR_SERVICE);
+                            break;
+
+                        case "Restaurant":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.RESTAURANT_URL,
+                                    CONSTANTS.RESTAURANT_PRICE,
+                                    CONSTANTS.RESTAURANT_MOODIMPROVE,
+                                    CONSTANTS.RESTAURANT_TIME,
+                                    CONSTANTS.RESTAURANT_TICKET,
+                                    CONSTANTS.RESTAURANT_SERVICE);
+                            break;
+
+                        case "Hot-Dogs":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.HOT_DOGS_URL,
+                                    CONSTANTS.HOT_DOGS_PRICE,
+                                    CONSTANTS.HOT_DOGS_MOODIMPROVE,
+                                    CONSTANTS.HOT_DOGS_TIME,
+                                    CONSTANTS.HOT_DOGS_TICKET,
+                                    CONSTANTS.HOT_DOGS_SERVICE);
+                            break;
+
+                        case "Cafe":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.CAFE_URL,
+                                    CONSTANTS.CAFE_PRICE,
+                                    CONSTANTS.CAFE_MOODIMPROVE,
+                                    CONSTANTS.CAFE_TIME,
+                                    CONSTANTS.CAFE_TICKET,
+                                    CONSTANTS.CAFE_SERVICE);
+                            break;
+                    }
+
+                    f.setVisible(true);
+                }
+            });
             foods.add(i);
         }
 
@@ -214,141 +242,6 @@ public class Menu extends JFrame {
         menuBar.add(gardens);
 
         f.setJMenuBar(menuBar);
-
-
-
-
-                /*JPanel popupmenu = new JPanel();
-                popupmenu.setLayout(new BoxLayout(popupmenu,BoxLayout.X_AXIS));
-                JButton building = new JButton("Building");
-                building.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        JFrame restaurants= new JFrame("Restaurants");
-                        //restaurants.getContentPane().setLayout(new BoxLayout(f,BoxLayout.Y_AXIS));
-                        restaurants.setSize(500,500);
-                        JPanel sidePop = new JPanel();
-                        setBackground(restaurants);
-                        sidePop.setLayout(new BoxLayout(sidePop,BoxLayout.X_AXIS));
-
-                        JButton securityBuilding = new JButton("Security Building");
-                        JButton Hotdog = new JButton("Hot Dog");
-                        JButton sweetShop = new JButton("Candy Shop");
-                        JButton IceCreamShop= new JButton("Ice Cream Shop");
-                        JButton atm = new JButton("ATM");
-                        JButton backbutton = new JButton("Back");
-                        backbutton.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                restaurants.setVisible(false);
-                                f.setVisible(true);
-                            }
-                        });
-                        JPanel bottom=new JPanel();
-                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
-
-                        //sidePop.add(backbutton);
-                        sidePop.add(atm);
-                        sidePop.add(securityBuilding);
-                        sidePop.add(Hotdog);
-                        sidePop.add(IceCreamShop);
-                        sidePop.add(sweetShop);
-                        bottom.add(backbutton);
-
-                       // f.getContentPane().removeAll();
-                       // f.getContentPane().add(sidePop);
-
-                        restaurants.getContentPane().add(sidePop);
-                        restaurants.getContentPane().add(bottom);
-
-                        f.setVisible(false);
-                        restaurants.setVisible(true);
-                        restaurants.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-                        restaurants.pack();
-                    }
-                });
-                JButton garden = new JButton("Garden");
-                garden.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        JFrame gardens= new JFrame("Garden");
-
-                        JPanel sidepop = new JPanel();
-                        setBackground(gardens);
-                        sidepop.setLayout(new BoxLayout(sidepop,BoxLayout.X_AXIS));
-                        JButton tree = new JButton("Tree");
-                        JButton grass = new JButton("Grass");
-                        JButton shrubs = new JButton("Shrubs");
-                        JPanel bottom = new JPanel();
-                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
-                        JButton back = new JButton("Back");
-                        back.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                gardens.setVisible(false);
-                                f.setVisible(true);
-                            }
-                        });
-                        bottom.add(back);
-                        sidepop.add(tree);
-                        sidepop.add(grass);
-                        sidepop.add(shrubs);
-                        gardens.getContentPane().add(sidepop);
-                        gardens.getContentPane().add(bottom);
-                        f.setVisible(false);
-                        gardens.setVisible(true);
-                        gardens.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                        gardens.pack();
-
-
-
-                    }
-                });
-                JButton staff = new JButton("Staff");
-                staff.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        JFrame staffHire= new JFrame("Staff");
-
-                        JPanel sidepop = new JPanel();
-                        setBackground(staffHire);
-                        sidepop.setLayout(new BoxLayout(sidepop,BoxLayout.X_AXIS));
-                        JButton cleanerB = new JButton("Cleaner");
-                        JButton repairmanB = new JButton("Repairman");
-                        JButton securityB = new JButton("Security");
-                        JPanel bottom = new JPanel();
-                        bottom.setLayout(new BoxLayout(bottom,BoxLayout.X_AXIS));
-                        JButton back = new JButton("Back");
-                        back.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                staffHire.setVisible(false);
-                                f.setVisible(true);
-                            }
-                        });
-                        bottom.add(back);
-                        sidepop.add(cleanerB);
-                        sidepop.add(repairmanB);
-                        sidepop.add(securityB);
-                        staffHire.getContentPane().add(sidepop);
-                        staffHire.getContentPane().add(bottom);
-                        f.setVisible(false);
-                        staffHire.setVisible(true);
-                        staffHire.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                        staffHire.pack();
-
-                    }
-                });
-                JButton pathB = new JButton("Path");
-
-                popupmenu.add(building);
-                popupmenu.add(garden);
-                popupmenu.add(staff);
-                popupmenu.add(pathB);
-
-                f.getContentPane().add(popupmenu);*/
-
         f.setVisible(true);
         f.pack();
     }
