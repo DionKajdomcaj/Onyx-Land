@@ -9,7 +9,6 @@ public abstract class Buildings {
     public Point position;
     //protected int moodImprovement;
     //protected int maxVisitors;
-    //protected int level;
     public boolean is_builted = false; //is it under construction or was builted and can work
 
     public Buildings(String n, int p, int tp, int s, Point pos){
@@ -38,12 +37,6 @@ public abstract class Buildings {
         this.position = position;
     }
 
-    /* public String RotatedSize() {
-            String[] temp = this.getSizeOfBuilding().split("x");
-            return temp[1] + "x" + temp[0];
-        }
-
-        */
     public int getSizeOfBuilding() {
         return this.sizeOfBuilding;
     }

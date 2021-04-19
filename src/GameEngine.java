@@ -1,4 +1,4 @@
-import Buildings.Buildings;
+import Buildings.*;
 import Staff.Staff;
 import Staff.Policeman;
 import Staff.Repairman;
@@ -9,12 +9,14 @@ import Staff.Thief;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GameEngine extends JPanel {
+public class GameEngine extends JPanel implements MouseListener {
     Player player;
     ArrayList<Visitor> visitors;
     Policeman policeman;
@@ -30,8 +32,9 @@ public class GameEngine extends JPanel {
     JLabel numberOfVisitors;
     JLabel averageMood;
 
-    int state = 0;
+    Buildings builds = null;
 
+    int state = 0;
 
     public GameEngine(int row, int col) {
         super();
@@ -41,6 +44,8 @@ public class GameEngine extends JPanel {
         int count = 0 ; // use to give a name to each box so that you can refer to them later
         setLayout(new GridLayout(row, col));
         setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        addMouseListener(this);
 
         /*for (int i = 1; i <= (row * col); i++) {
             JPanel pan = new JPanel();
@@ -57,6 +62,59 @@ public class GameEngine extends JPanel {
     }
 
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
+        BufferedImage img = null;
+        BufferedImage img2 = null;
+
+        try {
+           //img = ImageIO.read(new File("src/img/ground2.jpg"));
+           img = ImageIO.read(new File("src/img/ground2-700.png"));
+           img2 = ImageIO.read(new File("src/img/ground2-700-grid.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (state == 0) {
+            //Image dimg = img.getScaledInstance(800, 800, Image.	SCALE_DEFAULT);
+            g.drawImage(img, 0, 0, null);
+        } else {
+            g.drawImage(img2, 0, 0, null);
+        }
+
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if (state == 1) {
+
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+
+
     /*
         JLabel[] myPanels = new JLabel[300];
         for (int x = 0;x<myPanels.length;x++){
@@ -71,29 +129,5 @@ public class GameEngine extends JPanel {
             add(myPanels[x]);
     }
     */
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-        BufferedImage img = null;
-        BufferedImage img2 = null;
-
-        try {
-           //img = ImageIO.read(new File("src/img/ground2.jpg"));
-           img = ImageIO.read(new File("src/img/ground2-700.png"));
-           img2 = ImageIO.read(new File("src/img/ground2-700-grid.png"));
-       } catch (IOException e) {
-            e.printStackTrace();
-       }
-        if (state == 0) {
-            //Image dimg = img.getScaledInstance(800, 800, Image.	SCALE_DEFAULT);
-            g.drawImage(img, 0, 0, null);
-        } else {
-            g.drawImage(img2, 0, 0, null);
-        }
-
-    }
-
 }
 

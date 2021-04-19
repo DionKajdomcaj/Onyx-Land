@@ -1,5 +1,3 @@
-package ObjectsMenu;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +9,10 @@ import java.io.IOException;
 import CONSTANTS.CONSTANTS;
 
 public class Menu extends JFrame {
-    public Menu() {
+    GameEngine ge = null;
+
+    public Menu(GameEngine g) {
+        this.ge = g;
         JFrame f = new JFrame("What do you want to build?");
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.setSize(500,500);
@@ -369,7 +370,9 @@ public class Menu extends JFrame {
     private JLabel createIcon(String src) {
         BufferedImage img = null;
         try {
-            img = ImageIO.read(this.getClass().getResource(src));
+            img = ImageIO.read(new File(src));
+
+            //img = ImageIO.read(this.getClass().getResource(src));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -497,6 +500,13 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
+                /*switch (object_naming)
+                {
+
+                }*/
+
+                ge.state = 1;
+                ge.repaint();
             }
         });
 
