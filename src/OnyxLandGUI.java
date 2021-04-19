@@ -87,11 +87,11 @@ public class OnyxLandGUI extends JFrame{
         else if (i == 2) { //the second start window
 
             player = new Player();
-            GameEngine ge = new GameEngine(30,30);
-            TopPanel tp = new TopPanel();
+            GameEngine ge = new GameEngine(20,20);
+            TopPanel tp = new TopPanel(ge);
 
             gameFrame = new JFrame("OnyxLand");
-            gameFrame.setSize(800, 800);
+            gameFrame.setSize(715, 786);
             gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             //gameFrame.setLayout(new GridLayout(50,50));
             //setBackground2(gameFrame);

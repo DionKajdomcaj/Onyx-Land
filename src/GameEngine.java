@@ -30,6 +30,7 @@ public class GameEngine extends JPanel {
     JLabel numberOfVisitors;
     JLabel averageMood;
 
+    int state = 0;
 
 
     public GameEngine(int row, int col) {
@@ -56,36 +57,43 @@ public class GameEngine extends JPanel {
     }
 
 
+    /*
+        JLabel[] myPanels = new JLabel[300];
+        for (int x = 0;x<myPanels.length;x++){
 
-//        JLabel[] myPanels = new JLabel[300];
-//        for (int x = 0;x<myPanels.length;x++){
-//
-//            myPanels[x]=new JLabel("");
-//            myPanels[x].setOpaque(true);
-//            myPanels[x].setBackground(Color.BLUE);
-//            myPanels[x].setBorder(BorderFactory.createLineBorder(Color.black));
-//        }
-////Add all the squares (JLabels)
-//        for (int x = 0;x<myPanels.length;x++)
-//            add(myPanels[x]);
-//    }
-
-
-    //setBackground2(this);
+            myPanels[x]=new JLabel("");
+            myPanels[x].setOpaque(true);
+            myPanels[x].setBackground(Color.BLUE);
+            myPanels[x].setBorder(BorderFactory.createLineBorder(Color.black));
+        }
+    //Add all the squares (JLabels)
+        for (int x = 0;x<myPanels.length;x++)
+            add(myPanels[x]);
+    }
+    */
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
         BufferedImage img = null;
-       try {
-           img = ImageIO.read(new File("src/img/ground2.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-      }
-        Image dimg = img.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
-        g.drawImage(dimg, 0, 0, null);
-    }
+        BufferedImage img2 = null;
 
+        try {
+           //img = ImageIO.read(new File("src/img/ground2.jpg"));
+           img = ImageIO.read(new File("src/img/ground2-700.png"));
+           img2 = ImageIO.read(new File("src/img/ground2-700-grid.png"));
+       } catch (IOException e) {
+            e.printStackTrace();
+       }
+        if (state == 0) {
+            //Image dimg = img.getScaledInstance(800, 800, Image.	SCALE_DEFAULT);
+            g.drawImage(img, 0, 0, null);
+        } else {
+            g.drawImage(img2, 0, 0, null);
+        }
+
+    }
 
 }
 

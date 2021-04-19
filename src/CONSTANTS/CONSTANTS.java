@@ -1,3 +1,5 @@
+package CONSTANTS;
+
 public class CONSTANTS {
 
     static public final String ROLER_COASTER_PRICE = "500";

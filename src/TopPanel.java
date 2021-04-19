@@ -1,5 +1,6 @@
 import Buildings.Buildings;
 import Staff.*;
+import CONSTANTS.CONSTANTS;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -31,9 +32,10 @@ public class TopPanel extends JPanel {
     JLabel averageMoodIcon;
     JLabel numberOfVisitorsIcon;
 
-    TopPanel() {
+    GameEngine ge = null;
+    TopPanel(GameEngine g) {
         this.setLayout(new GridLayout(0, 8, 10, 0));
-
+        this.ge = g;
         moneyOfPlayer = new JLabel();
         moneyOfPlayer.setText("2000");
         moneyOfPlayer.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
@@ -283,9 +285,6 @@ public class TopPanel extends JPanel {
                 menuBar.add(gardens);
 
                 f.setJMenuBar(menuBar);
-
-
-
 
                 /*JPanel popupmenu = new JPanel();
                 popupmenu.setLayout(new BoxLayout(popupmenu,BoxLayout.X_AXIS));
@@ -606,6 +605,8 @@ public class TopPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
+                ge.state = 1;
+                ge.repaint();
             }
         });
 
