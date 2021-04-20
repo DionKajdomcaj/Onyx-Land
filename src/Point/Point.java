@@ -1,7 +1,7 @@
 package Point;
 
 public class Point {
-    protected int x,y;
+    public int x,y;
 
     public Point(int x, int y) {
         this.x = x;

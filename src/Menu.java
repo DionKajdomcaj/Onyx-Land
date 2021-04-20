@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import Point.Point;
+
+import Buildings.Restaurant;
 import CONSTANTS.CONSTANTS;
 
 public class Menu extends JFrame {
@@ -283,8 +286,6 @@ public class Menu extends JFrame {
                                       String object_time_to_build,
                                       String object_ticket_cost,
                                       String object_service) {
-        System.out.println(object_naming);
-
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.weightx = 0.5;
@@ -393,13 +394,24 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
-                /*switch (object_naming)
+                switch(object_naming)
                 {
+                    case "Hot-Dogs":
+                        Restaurant hotdog = new Restaurant(object_naming,100,5,new Point(2,1),20,new Point(0,0),"src/img/hot-dogs.jpg");
+                        System.out.println(hotdog.img);
 
-                }*/
+                        ge.buildings.add(hotdog);
+                        //ge.repaint();
+                        System.out.println(100);
+                        break;
+                    default:
+                        System.out.println(50);
+                        break;
+
+                }
 
                 ge.state = 1;
-                ge.repaint();
+                //ge.repaint();
             }
         });
 
