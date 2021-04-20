@@ -11,6 +11,12 @@ public class Visitor {
         this.moneyToSpend=1500;
         this.mood=50;
     }
+    public int getMood(){
+        return mood;
+    }
+    public void setMood(int mood1){
+        mood=mood1;
+    }
     public Point getPosition(){
         return position;
     }

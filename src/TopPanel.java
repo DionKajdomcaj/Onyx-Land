@@ -12,15 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class TopPanel extends JPanel {
-    Player player;
-    ArrayList<Visitor> visitors;
-    Policeman policeman;
-    Thief thief;
-    Repairman repairman;
-    Security security;
-    Cleaner cleaner;
-    ArrayList<Buildings> buildings;
-    ArrayList<Staff>staff;
     JButton menuButton;
     JButton settingsButton;
 
@@ -31,10 +22,10 @@ public class TopPanel extends JPanel {
     JLabel averageMoodIcon;
     JLabel numberOfVisitorsIcon;
 
-    TopPanel(GameEngine g) {
+    public TopPanel(GameEngine g) {
         this.setLayout(new GridLayout(0, 8, 10, 0));
         moneyOfPlayer = new JLabel();
-        moneyOfPlayer.setText("2000");
+        moneyOfPlayer.setText(String.valueOf(g.player.getamountOfMoney()));
         moneyOfPlayer.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
         //moneyOfPlayer.setBackground(Color.GREEN);
         //moneyOfPlayer.setOpaque(true);
@@ -49,7 +40,7 @@ public class TopPanel extends JPanel {
         //moneyOfPlayer.setPreferredSize(new Dimension(20,20));
 
         numberOfVisitors = new JLabel();
-        numberOfVisitors.setText("20");
+        numberOfVisitors.setText(String.valueOf(g.visitors.size()));
         numberOfVisitors.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 16));
 
         numberOfVisitorsIcon = new JLabel();
@@ -80,7 +71,7 @@ public class TopPanel extends JPanel {
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Menu buildMenuFunction = new Menu(g);
+                Menu buildMenuFunction = new Menu(g,moneyOfPlayer);
 //                JFrame f = new JFrame("Menu");
 //                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //                f.setSize(500,500);

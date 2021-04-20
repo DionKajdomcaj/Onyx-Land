@@ -44,6 +44,13 @@ public class GameEngine extends JPanel implements MouseListener {
 
     }
 
+    public int averageMood(){
+        int sum=0;
+        for(Visitor v : visitors){
+            sum+=v.getMood();
+        }
+        return sum/visitors.size();
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -89,12 +96,13 @@ public class GameEngine extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (state == 1) {
-
+            System.out.println(e.getX() + " "+ e.getY());
+            buildings.get(buildings.size()-1).position = new Point(e.getX(), e.getY());
+            repaint();
+            player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
         }
-        System.out.println(e.getX() + " "+ e.getY());
-        buildings.get(buildings.size()-1).position = new Point(e.getX(), e.getY());
+        state = 0;
 
-        repaint();
     }
 
     @Override

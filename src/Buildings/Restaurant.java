@@ -18,6 +18,7 @@ public class Restaurant extends Buildings {
     public  void Delete(){}
     public  void Built(){
 
+
     }
     public  void Repair(){}
     public  void Clean(){}
