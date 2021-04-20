@@ -237,9 +237,68 @@ public class Menu extends JFrame {
             foods.add(i);
         }
 
-        String[] gardenNames = {"Palm Tree", "Grass", "Flowers Shrub", "Mini Forest"};//, "Tall tree", "Thick tree"};
-        for (String s: foodsNames) {
+        String[] gardenNames = {"Palm Tree", "Grass", "Shrub", "Mini Forest"};//, "Tall tree", "Thick tree"};
+        for (String s: gardenNames) {
             JMenuItem i = new JMenuItem(s);
+            i.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JPanel container = new JPanel();
+                    container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    container.setLayout(new GridBagLayout());
+
+                    f.getContentPane().removeAll();
+                    f.getContentPane().repaint();
+                    f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    //f.setSize(500,500);
+                    //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                    f.setLayout(new BorderLayout());
+                    setBackground(f);
+
+                    switch (s) {
+                        case "Palm Tree":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.PALM_TREE_URL,
+                                    CONSTANTS.PALM_TREE_PRICE,
+                                    CONSTANTS.PALM_TREE_MOODIMPROVE,
+                                    CONSTANTS.PALM_TREE_TIME,
+                                    CONSTANTS.PALM_TREE_TICKET,
+                                    CONSTANTS.PALM_TREE_SERVICE);
+                            break;
+                        case "Grass":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.GRASS_URL,
+                                    CONSTANTS.GRASS_PRICE,
+                                    CONSTANTS.GRASS_MOODIMPROVE,
+                                    CONSTANTS.GRASS_TIME,
+                                    CONSTANTS.GRASS_TICKET,
+                                    CONSTANTS.GRASS_SERVICE);
+                            break;
+
+                        case "Shrub":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.SHRUB_URL,
+                                    CONSTANTS.SHRUB_PRICE,
+                                    CONSTANTS.SHRUB_MOODIMPROVE,
+                                    CONSTANTS.SHRUB_TIME,
+                                    CONSTANTS.SHRUB_TICKET,
+                                    CONSTANTS.SHRUB_SERVICE);
+                            break;
+
+                        case "Mini Forest":
+                            showObjectProperties(container, f, s,
+                                    CONSTANTS.MINI_FOREST_URL,
+                                    CONSTANTS.MINI_FOREST_PRICE,
+                                    CONSTANTS.MINI_FOREST_MOODIMPROVE,
+                                    CONSTANTS.MINI_FOREST_TIME,
+                                    CONSTANTS.MINI_FOREST_TICKET,
+                                    CONSTANTS.MINI_FOREST_SERVICE);
+                            break;
+                    }
+
+                    f.setVisible(true);
+                }
+            });
             gardens.add(i);
         }
 

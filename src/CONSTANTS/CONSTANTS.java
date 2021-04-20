@@ -99,24 +99,28 @@ public class CONSTANTS {
     static public final String PALM_TREE_TIME = "0:00";
     static public final String PALM_TREE_TICKET = "0";
     static public final String PALM_TREE_SERVICE = "0";
+    static public final String PALM_TREE_URL = "img/palm.jpg";
 
     static public final String GRASS_PRICE = "5";
     static public final String GRASS_MOODIMPROVE = "1";
     static public final String GRASS_TIME = "0:00";
     static public final String GRASS_TICKET = "0";
     static public final String GRASS_SERVICE = "0";
+    static public final String GRASS_URL = "img/grass.jpg";
 
     static public final String SHRUB_PRICE = "20";
     static public final String SHRUB_MOODIMPROVE = "1";
     static public final String SHRUB_TIME = "0:00";
     static public final String SHRUB_TICKET = "0";
     static public final String SHRUB_SERVICE = "0";
+    static public final String SHRUB_URL = "img/shrub.jpg";
 
     static public final String MINI_FOREST_PRICE = "50";
     static public final String MINI_FOREST_MOODIMPROVE = "5";
     static public final String MINI_FOREST_TIME = "0:00";
     static public final String MINI_FOREST_TICKET = "0";
     static public final String MINI_FOREST_SERVICE = "0";
+    static public final String MINI_FOREST_URL = "img/mini-forest.jpg";
 
     public CONSTANTS() {}
 }
