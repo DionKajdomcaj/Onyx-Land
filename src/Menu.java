@@ -457,6 +457,9 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
+                ge.state = 1;
+                ge.repaint();
+
                 switch(object_naming)
                 {
                     case "Hot-Dogs":
@@ -524,7 +527,7 @@ public class Menu extends JFrame {
                     case "Dirt Path":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE));
-                           // ge.buildings.add(new Path(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.TRAMPOLINE_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
+                            //ge.buildings.add(new Path(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.TRAMPOLINE_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
                             break;
                         }
                     case "Stone Path":
@@ -546,8 +549,6 @@ public class Menu extends JFrame {
 
                 }
 
-                ge.state = 1;
-                //ge.repaint();
             }
         });
 

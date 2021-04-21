@@ -97,6 +97,11 @@ public class GameEngine extends JPanel implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (state == 1) {
             System.out.println(e.getX() + " "+ e.getY());
+            /*function_that_will_transform_eX_and_eY_to_the_CellX_and_CellY(e.getX(),e.getY());
+            7/35 = 0 => 0th column by X coordinate axis
+            41/35 = 1.333 => 1th column by Y coordinate
+
+            0, 35     */
             buildings.get(buildings.size()-1).position = new Point(e.getX(), e.getY());
             repaint();
             player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
