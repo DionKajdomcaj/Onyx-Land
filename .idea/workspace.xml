@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Gardens added to the menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine$NewFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine$NewFrameListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

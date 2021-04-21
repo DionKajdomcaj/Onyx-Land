@@ -465,83 +465,93 @@ public class Menu extends JFrame {
                     case "Hot-Dogs":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(3,2),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg"));
                             break;
                         }
 
                     case "Drinking Fountain":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_PRICE),Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_TICKET),new Point(3,4),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/drinking-fountain.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_PRICE),Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_TICKET),new Point(1,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/drinking-fountain.jpg"));
                             break;
                         }
 
                     case "Restaurant":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.RESTAURANT_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.RESTAURANT_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.RESTAURANT_PRICE),Integer.parseInt(CONSTANTS.RESTAURANT_TICKET),new Point(4,2),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/restaurant.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.RESTAURANT_PRICE),Integer.parseInt(CONSTANTS.RESTAURANT_TICKET),new Point(3,2),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/restaurant.jpg"));
                             break;
                         }
 
                     case "Cafe":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.CAFE_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.CAFE_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.CAFE_PRICE),Integer.parseInt(CONSTANTS.CAFE_TICKET),new Point(2,3),Integer.parseInt(CONSTANTS.CAFE_MOODIMPROVE),new Point(0,0),"src/img/cafe.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.CAFE_PRICE),Integer.parseInt(CONSTANTS.CAFE_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.CAFE_MOODIMPROVE),new Point(0,0),"src/img/cafe.jpg"));
                             break;
                         }
 
                     case "Snack Bar":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.SNACK_BAR_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.SNACK_BAR_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.SNACK_BAR_PRICE),Integer.parseInt(CONSTANTS.SNACK_BAR_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.SNACK_BAR_MOODIMPROVE),new Point(0,0),"./src/img/snack-bar.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.SNACK_BAR_PRICE),Integer.parseInt(CONSTANTS.SNACK_BAR_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.SNACK_BAR_MOODIMPROVE),new Point(0,0),"./src/img/snack-bar.jpg"));
                             break;
                         }
 
                     case "Roller Coaster":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.ROLER_COASTER_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.ROLER_COASTER_PRICE));
-                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.ROLER_COASTER_PRICE),Integer.parseInt(CONSTANTS.ROLER_COASTER_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.ROLER_COASTER_MOODIMPROVE),new Point(0,0),"./src/img/RolerCoaster.jpg"));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.ROLER_COASTER_PRICE),Integer.parseInt(CONSTANTS.ROLER_COASTER_TICKET),new Point(4,4),Integer.parseInt(CONSTANTS.ROLER_COASTER_MOODIMPROVE),new Point(0,0),"./src/img/RolerCoaster.jpg"));
                             break;
                         }
 
                     case "Swing":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.SWING_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.SWING_PRICE));
-                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.SWING_PRICE),Integer.parseInt(CONSTANTS.SWING_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.SWING_MOODIMPROVE),new Point(0,0),"./src/img/swing.jpg"));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.SWING_PRICE),Integer.parseInt(CONSTANTS.SWING_TICKET),new Point(3,2),Integer.parseInt(CONSTANTS.SWING_MOODIMPROVE),new Point(0,0),"./src/img/swing.jpg"));
                             break;
                         }
 
                     case "Wooden Chute":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.CHUTE_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.CHUTE_PRICE));
-                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.CHUTE_PRICE),Integer.parseInt(CONSTANTS.CHUTE_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.CHUTE_MOODIMPROVE),new Point(0,0),"./src/img/shute.jpg"));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.CHUTE_PRICE),Integer.parseInt(CONSTANTS.CHUTE_TICKET),new Point(3,2),Integer.parseInt(CONSTANTS.CHUTE_MOODIMPROVE),new Point(0,0),"./src/img/shute.jpg"));
                             break;
                         }
 
                     case "Trampoline":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.TRAMPOLINE_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.TRAMPOLINE_PRICE));
-                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.TRAMPOLINE_PRICE),Integer.parseInt(CONSTANTS.TRAMPOLINE_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.TRAMPOLINE_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.TRAMPOLINE_PRICE),Integer.parseInt(CONSTANTS.TRAMPOLINE_TICKET),new Point(3,3),Integer.parseInt(CONSTANTS.TRAMPOLINE_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
                             break;
                         }
                     case "Dirt Path":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE));
-                            //ge.buildings.add(new Path(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.TRAMPOLINE_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
+                            //ge.buildings.add(new Path(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.DIRT_PATH_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(1,1),Integer.parseInt(CONSTANTS.DIRT_PATH_MOODIMPROVE),new Point(0,0),"./src/img/dirty-path.JPG"));
+
                             break;
                         }
                     case "Stone Path":
-
-                        break;
+                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.STONE_PATH_PRICE)){
+                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.STONE_PATH_PRICE));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.STONE_PATH_PRICE),Integer.parseInt(CONSTANTS.STONE_PATH_TICKET),new Point(1,1),Integer.parseInt(CONSTANTS.STONE_PATH_MOODIMPROVE),new Point(0,0),"./src/img/stone-path.JPG"));
+                            break;
+                        }
 
                     case "Decorative path":
-
-                        break;
+                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DECORATIVE_PATH_PRICE)){
+                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.DECORATIVE_PATH_PRICE));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.DECORATIVE_PATH_PRICE),Integer.parseInt(CONSTANTS.DECORATIVE_PATH_TICKET),new Point(1,1),Integer.parseInt(CONSTANTS.DECORATIVE_PATH_MOODIMPROVE),new Point(0,0),"./src/img/decorative-path.JPG"));
+                            break;
+                        }
 
                     case "Golden Path":
-
-                        break;
-
+                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.GOLDEN_PATH_PRICE)){
+                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.GOLDEN_PATH_PRICE));
+                            ge.buildings.add(new Games(object_naming,Integer.parseInt(CONSTANTS.GOLDEN_PATH_PRICE),Integer.parseInt(CONSTANTS.GOLDEN_PATH_TICKET),new Point(1,1),Integer.parseInt(CONSTANTS.GOLDEN_PATH_MOODIMPROVE),new Point(0,0),"./src/img/golden-path.png"));
+                            break;
+                        }
 
                     default:
                         System.out.println(50);
