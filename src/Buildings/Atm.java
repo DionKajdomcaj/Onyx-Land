@@ -7,8 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Atm extends Buildings {
-    public Atm(String naming, int price, int tprice, Point size, Point pos, String src){
+    private int capacity;
+    public Atm(String naming, int price, int tprice, Point size, Point pos, String src,int capacity){
         super(naming, price, tprice, size,pos,src);
+        this.capacity=capacity;
     }
     public String GetInfo(){
         return "test";

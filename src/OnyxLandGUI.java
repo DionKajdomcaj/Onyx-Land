@@ -89,6 +89,7 @@ public class OnyxLandGUI extends JFrame{
             player = new Player();
             GameEngine ge = new GameEngine(20,20);
             TopPanel tp = new TopPanel(ge);
+            ge.top=tp;
 
             gameFrame = new JFrame("OnyxLand");
             gameFrame.setSize(715, 786);

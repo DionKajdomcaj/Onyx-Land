@@ -2,8 +2,8 @@ package Buildings.Gargens;
 import Point.Point;
 
 public class Shrubs extends Gardens {
-    public Shrubs(int price, int moodImprovement, Point pos){
-        super(price, moodImprovement, pos);
+    public Shrubs(String name,int price, int moodImprovement, Point pos,Point size,String src){
+        super(name,price, moodImprovement, pos, size, src);
 
     }
 }

@@ -1,4 +1,5 @@
 import Buildings.*;
+import Buildings.Gargens.Gardens;
 import Staff.*;
 import Point.Point;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class GameEngine extends JPanel implements MouseListener {
     Player player;
+    JPanel top;
     ArrayList<Visitor> visitors;
     Policeman policeman;
     Thief thief;
@@ -25,6 +27,8 @@ public class GameEngine extends JPanel implements MouseListener {
     Cleaner cleaner;
     ArrayList<Buildings> buildings;
     ArrayList<Staff>staff;
+    ArrayList<Path> paths;
+    ArrayList<Gardens>gardens;
     JButton menuButton;
     JButton settingsButton;
     JLabel numberOfVisitors;
@@ -39,6 +43,10 @@ public class GameEngine extends JPanel implements MouseListener {
         player = new Player();
         visitors = new ArrayList<>();
         buildings = new ArrayList<>();
+        paths = new ArrayList<>();
+        gardens = new ArrayList<>();
+
+
 
         addMouseListener(this);
 
@@ -87,8 +95,12 @@ public class GameEngine extends JPanel implements MouseListener {
         for(Buildings b2 : buildings){
             b2.draw(g);
         }
-        //Restaurant hotdog = new Restaurant("Hot-Dog",100,5,new Point(3,2),20,new Point(5,15),"src/img/hot-dogs.jpg");
-        //hotdog.draw(g);
+        for(Path p : paths){
+            p.draw(g);
+        }
+        for(Gardens garden : gardens){
+            garden.draw(g);
+        }
 
 
     }
@@ -105,6 +117,20 @@ public class GameEngine extends JPanel implements MouseListener {
             buildings.get(buildings.size()-1).position = new Point(e.getX(), e.getY());
             repaint();
             player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
+
+
+        }
+        else if(state == 2){
+            paths.get(paths.size()-1).position=new Point(e.getX(),e.getY());
+            repaint();
+            player.setAmountOfMoney(player.getamountOfMoney()-paths.get(paths.size()-1).getPrice());
+
+
+        }
+        else if(state == 3){
+            gardens.get(gardens.size()-1).position=new Point(e.getX(),e.getY());
+            repaint();
+            player.setAmountOfMoney(player.getamountOfMoney()-gardens.get(gardens.size()-1).getPrice());
         }
         state = 0;
 
@@ -134,7 +160,7 @@ public class GameEngine extends JPanel implements MouseListener {
 
     class NewFrameListener implements ActionListener {
         public void actionPerformed(ActionEvent ae){
-            repaint(new Rectangle());
+
 
 
 

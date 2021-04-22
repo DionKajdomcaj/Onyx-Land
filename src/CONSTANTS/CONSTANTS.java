@@ -16,6 +16,20 @@ public class CONSTANTS {
     static public final String SWING_SERVICE = "10";
     static public final String SWING_URL = "img/swing.JPG";
 
+    static public final String ATM_PRICE = "100";
+    static public final String ATM_MOODIMPROVE = "0";
+    static public final String ATM_TIME = "0:30";
+    static public final String ATM_TICKET = "0";
+    static public final String ATM_SERVICE = "10";
+    static public final String ATM_URL = "img/atm.png";
+
+    static public final String SEC_PRICE = "200";
+    static public final String SEC_MOODIMPROVE = "0";
+    static public final String SEC_TIME = "0:30";
+    static public final String SEC_TICKET = "0";
+    static public final String SEC_SERVICE = "10";
+    static public final String SEC_URL = "img/sec.png";
+
     static public final String CHUTE_PRICE = "150";
     static public final String CHUTE_MOODIMPROVE = "3";
     static public final String CHUTE_TIME = "0:45";

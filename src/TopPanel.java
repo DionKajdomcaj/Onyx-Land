@@ -15,9 +15,9 @@ public class TopPanel extends JPanel {
     JButton menuButton;
     JButton settingsButton;
 
-    JLabel moneyOfPlayer;
-    JLabel numberOfVisitors;
-    JLabel averageMood;
+    public JLabel moneyOfPlayer;
+    public JLabel numberOfVisitors;
+    public JLabel averageMood;
     JLabel moneyOfPlayer_icon;
     JLabel averageMoodIcon;
     JLabel numberOfVisitorsIcon;
