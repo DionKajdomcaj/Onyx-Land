@@ -49,5 +49,11 @@ public abstract class Gardens {
         this.moodImprovement = moodImprovement;
     }
 
+    public Point getPosition() {
+        return position;
+    }
+    public Point getSize() {
+        return size;
+    }
 
 }

@@ -105,30 +105,91 @@ public class GameEngine extends JPanel implements MouseListener {
 
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        if (state == 1) {
-            System.out.println(e.getX() + " "+ e.getY());
-            /*function_that_will_transform_eX_and_eY_to_the_CellX_and_CellY(e.getX(),e.getY());
+    private int[] transform_eXeY_to_CellXCellY(int x, int y) {
+        /*function_that_will_transform_eX_and_eY_to_the_CellX_and_CellY(e.getX(),e.getY());
             7/35 = 0 => 0th column by X coordinate axis
             41/35 = 1.333 => 1th column by Y coordinate
 
-            0, 35     */
-            buildings.get(buildings.size()-1).position = new Point(e.getX(), e.getY());
+            0, 35 */
+
+        int cx = x/35 * 35;
+        int cy = y/35 * 35;
+        return new int[]{cx, cy};
+    }
+    private boolean NOTenoughPlace(int[] xy, int sizeX, int sizeY) {
+
+        int right_top_X4 = xy[0] + sizeX;
+        int right_top_Y4 = xy[1];
+        int left_bottom_X3 = xy[0];
+        int left_bottom_Y3 = xy[1] + sizeY;
+        System.out.println("entered");
+        System.out.println(buildings.size());
+
+        for (int i = 0; i < buildings.size()-1; i++) {
+            int right_top_X2 = buildings.get(i).getPosition().x + buildings.get(i).getSize().x;
+            int right_top_Y2 = buildings.get(i).getPosition().y;
+            int left_bottom_X1 = buildings.get(i).getPosition().x;
+            int left_bottom_Y1 = buildings.get(i).getPosition().y + buildings.get(i).getSize().y;
+
+            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
+                return true;
+            }
+            System.out.println(i);
+
+        }
+        for (int i = 0; i < gardens.size()-1; i++) {
+            int right_top_X2 = gardens.get(i).getPosition().x + gardens.get(i).getSize().x;
+            int right_top_Y2 = gardens.get(i).getPosition().y;
+            int left_bottom_X1 = gardens.get(i).getPosition().x;
+            int left_bottom_Y1 = gardens.get(i).getPosition().y + gardens.get(i).getSize().y;
+
+            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
+                return true;
+            }
+        }
+        for (int i = 0; i < paths.size()-1; i++) {
+            int right_top_X2 = paths.get(i).getPosition().x + paths.get(i).getSize();
+            int right_top_Y2 = paths.get(i).getPosition().y;
+            int left_bottom_X1 = paths.get(i).getPosition().x;
+            int left_bottom_Y1 = paths.get(i).getPosition().y + paths.get(i).getSize();
+
+            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int[] xy = transform_eXeY_to_CellXCellY(e.getX(), e.getY());
+
+        if (state == 1) {
+//            if (NOTenoughPlace(xy, buildings.get(buildings.size()-1).getSize().x, buildings.get(buildings.size()-1).getSize().y)) {
+//                /*buildings.remove(buildings.size() - 1);
+//                state = 0;*/
+//                return;
+//            }
+            buildings.get(buildings.size()-1).position = new Point(xy[0], xy[1]);
             repaint();
             player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
-
-
         }
         else if(state == 2){
-            paths.get(paths.size()-1).position=new Point(e.getX(),e.getY());
+//            if (NOTenoughPlace(xy, paths.get(paths.size()-1).getSize(), paths.get(paths.size()-1).getSize())) {
+//                /*paths.remove(paths.size() - 1);
+//                state = 0;*/
+//                return;
+//            }
+            paths.get(paths.size()-1).position = new Point(xy[0], xy[1]);
             repaint();
             player.setAmountOfMoney(player.getamountOfMoney()-paths.get(paths.size()-1).getPrice());
-
-
         }
         else if(state == 3){
-            gardens.get(gardens.size()-1).position=new Point(e.getX(),e.getY());
+//            if (NOTenoughPlace(xy, gardens.get(gardens.size()-1).getSize().x, gardens.get(gardens.size()-1).getSize().y)) {
+//                /*gardens.remove(gardens.size() - 1);
+//                state = 0;*/
+//                return;
+//            }
+            gardens.get(gardens.size()-1).position = new Point(xy[0], xy[1]);
             repaint();
             player.setAmountOfMoney(player.getamountOfMoney()-gardens.get(gardens.size()-1).getPrice());
         }

@@ -87,6 +87,7 @@ public class OnyxLandGUI extends JFrame{
         else if (i == 2) { //the second start window
 
             player = new Player();
+            //Matrix m = new Matrix();
             GameEngine ge = new GameEngine(20,20);
             TopPanel tp = new TopPanel(ge);
             ge.top=tp;

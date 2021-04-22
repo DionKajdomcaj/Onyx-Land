@@ -39,4 +39,7 @@ public class Path {
         return size;
     }
 
+    public Point getPosition() {
+        return position;
+    }
 }

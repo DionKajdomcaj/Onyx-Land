@@ -14,7 +14,7 @@ public abstract class Buildings {
     public String naming;
     protected int price;
     protected int ticketPrice;
-    protected Point sizeOfBuilding; //for example "3x6", "8x2"
+    protected Point size; //for example "3x6", "8x2"
     public Point position;
     //protected int moodImprovement;
     //protected int maxVisitors;
@@ -25,7 +25,7 @@ public abstract class Buildings {
         this.naming=n;
         this.price = p;
         this.ticketPrice = tp;
-        this.sizeOfBuilding = new Point(size);
+        this.size = new Point(size);
         this.position=new Point(pos);
 
         try {
@@ -49,13 +49,16 @@ public abstract class Buildings {
     public Point getPosition() {
         return position;
     }
+    public Point getSize() {
+        return size;
+    }
 
     public void setPosition(Point position) {
         this.position = position;
     }
 
-    public Point getSizeOfBuilding() {
-        return this.sizeOfBuilding;
+    public Point getsize() {
+        return this.size;
     }
     public int getPrice() {
         return this.price;
@@ -72,12 +75,12 @@ public abstract class Buildings {
     //public int getMaxVisitors() {return this.maxVisitors;}
    // public int getCurrentLevel() {return this.level;}
     public boolean collides(Buildings other){
-        Rectangle current = new Rectangle(this.position.getX(),this.position.getY(),this.sizeOfBuilding.getX(),this.sizeOfBuilding.getY());
-        Rectangle notCurrent = new Rectangle(other.position.getX(),other.position.getY(),other.sizeOfBuilding.getX(),other.sizeOfBuilding.getY());
+        Rectangle current = new Rectangle(this.position.getX(),this.position.getY(),this.size.getX(),this.size.getY());
+        Rectangle notCurrent = new Rectangle(other.position.getX(),other.position.getY(),other.size.getX(),other.size.getY());
         return current.intersects(notCurrent);
     }
     public void draw(Graphics g){
-        g.drawImage(img,position.getX(),position.getY(),sizeOfBuilding.getX()*35,sizeOfBuilding.getY()*35,null);//x=width, y=height
+        g.drawImage(img,position.getX(),position.getY(),size.getX()*35,size.getY()*35,null);//x=width, y=height
     }
 
     @Override

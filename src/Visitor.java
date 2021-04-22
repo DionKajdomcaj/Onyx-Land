@@ -5,7 +5,7 @@ public class Visitor {
     private int moneyToSpend;
     private int mood;
     private Point position;
-
+    public String img_url = "./src/img/visitor2.png";
     public Visitor(Point pos){
         this.position=new Point(pos);
         this.moneyToSpend=1500;
