@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Specially for Liza">
-      <change afterPath="$PROJECT_DIR$/src/Matrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Atm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Atm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/SecurityBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/SecurityBuilding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine$NewFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine$NewFrameListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Buildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings/Gargens/Gardens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Gargens/Gardens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OnyxLandGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnyxLandGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TopPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +36,6 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Main Onyxland" />
   </component>
   <component name="RunManager">
-    <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OnyxLand" />
-      <module name="onyx-land" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -75,13 +47,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OnyxLand" />
+      <module name="onyx-land" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OnyxLand" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

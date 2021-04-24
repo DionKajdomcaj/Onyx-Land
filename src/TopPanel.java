@@ -18,6 +18,8 @@ public class TopPanel extends JPanel {
     public JLabel moneyOfPlayer;
     public JLabel numberOfVisitors;
     public JLabel averageMood;
+    public MenuPanel menupanel;
+    public JFrame menuframe;
     JLabel moneyOfPlayer_icon;
     JLabel averageMoodIcon;
     JLabel numberOfVisitorsIcon;
@@ -426,8 +428,13 @@ public class TopPanel extends JPanel {
                 popupmenu.setLayout(new BoxLayout(popupmenu,BoxLayout.X_AXIS));
                 f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 setBackground(f);
-                JButton building = new JButton("Audio");
-                building.addActionListener(new ActionListener() {
+                JButton Audio = new JButton("Audio");
+                Audio.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+                Audio.setForeground(new Color(38, 35, 37));
+                Audio.setPreferredSize(new Dimension(150,50));
+                Audio.setBackground(new Color(168, 111, 151));
+
+                Audio.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JPanel sidePop = new JPanel();
@@ -440,11 +447,32 @@ public class TopPanel extends JPanel {
 
                     }
                 });
-                JButton garden = new JButton("Video");
-                JButton staff = new JButton("Rules");
-                popupmenu.add(building);
-                popupmenu.add(garden);
-                popupmenu.add(staff);
+                JButton video = new JButton("Video");
+                video.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+                video.setForeground(new Color(38, 35, 37));
+                video.setPreferredSize(new Dimension(150,50));
+                video.setBackground(new Color(168, 111, 151));
+
+                JButton rulesButton = new JButton("Rules");
+                rulesButton.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+                rulesButton.setForeground(new Color(38, 35, 37));
+                rulesButton.setPreferredSize(new Dimension(150,50));
+                rulesButton.setBackground(new Color(168, 111, 151));
+
+
+                rulesButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        menupanel = new MenuPanel(3);
+                        menuframe.getContentPane().add(menupanel);
+
+                    }
+                });
+
+                popupmenu.add(Audio);
+                popupmenu.add(video);
+                popupmenu.add(rulesButton);
                 f.getContentPane().add(popupmenu);
                 f.setVisible(true);
                 f.pack();
