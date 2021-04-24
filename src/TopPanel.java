@@ -69,6 +69,8 @@ public class TopPanel extends JPanel {
         menuButton.setForeground(new Color(74, 59, 91));
         //menuButton.setPreferredSize(new Dimension(100,60));
         menuButton.setBackground(new Color(168, 111, 151));
+
+
         this.add(menuButton);
         menuButton.addActionListener(new ActionListener() {
             @Override

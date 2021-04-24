@@ -31,9 +31,24 @@ public class Menu extends JFrame {
         //creating menu
         JMenuBar menuBar = new JMenuBar();
         JMenu amusements = new JMenu("Amusements");
+        amusements.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        amusements.setPreferredSize(new Dimension(150,50));
+        amusements.setBackground(new Color(168, 111, 151));
+
         JMenu paths = new JMenu("Paths");
+        paths.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        paths.setPreferredSize(new Dimension(150,50));
+        paths.setBackground(new Color(168, 111, 151));
+
         JMenu foods = new JMenu("Food Courts");
+        foods.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        foods.setPreferredSize(new Dimension(150,50));
+        foods.setBackground(new Color(168, 111, 151));
+
         JMenu gardens = new JMenu("Gardens");
+        gardens.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+        gardens.setPreferredSize(new Dimension(150,50));
+        gardens.setBackground(new Color(168, 111, 151));
 
         String[] amusementsNames = {"Security Building","ATM","Roller Coaster", "Swing", "Wooden Chute", "Trampoline" };//, "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
         for (String s: amusementsNames) {
