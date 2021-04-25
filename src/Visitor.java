@@ -8,12 +8,17 @@ import java.io.File;
 import java.io.IOException;
 
 public class Visitor {
+    public int visitor_passed_2_cells = 0;
+    public Point directionToMove = new Point(-35, 0);
+
     private int moneyToSpend;
     private int mood;
     private Point position;
+    private Point previous_position;
     public BufferedImage img;
     public Visitor(){
         this.position=new Point(665, 70);
+        this.previous_position = new Point(1000,1000);
         this.moneyToSpend=1500;
         this.mood=50;
 
@@ -37,6 +42,12 @@ public class Visitor {
     }
     public void setPosition(Point pos){
         position=new Point(pos);
+    }
+    public Point getPrevPosition(){
+        return previous_position;
+    }
+    public void setPrevPosition(Point pos){
+        previous_position=new Point(pos);
     }
     public void useBuilding(){}
     public void payTicket(){}
