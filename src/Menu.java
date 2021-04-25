@@ -643,7 +643,6 @@ public class Menu extends JFrame {
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.SHRUB_PRICE));
                             ge.gardens.add(new Grass(object_naming, Integer.parseInt(CONSTANTS.SHRUB_PRICE),Integer.parseInt(CONSTANTS.SHRUB_MOODIMPROVE),new Point(0, 0),  new Point(1, 1), "./src/img/shrub.jpg"));
                             ge.state=3;
-
                         }
                         break;
 

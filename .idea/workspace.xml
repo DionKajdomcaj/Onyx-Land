@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Made visitors movable and matrices for paths created">
+      <change afterPath="$PROJECT_DIR$/src/img/entrance1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/AtmTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/BuildingsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/GamesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/PathTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/RestaurantTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Buildings/SecurityBuildingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/GameEngineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/MouseInputTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/PlayerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/CleanerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/PolicemanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/RepairmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/SecurityManTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/StaffTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Staff/ThiefTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/VisitorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onyx-land.iml" beforeDir="false" afterPath="$PROJECT_DIR$/onyx-land.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buildings/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OnyxLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnyxLand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Staff/Security.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/SecurityMan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -29,13 +52,36 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Main Onyxland" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LIZA\IdeaProjects\onyx-land9\src\img" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Staff" />
+      <recent name="Buildings" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.OnyxLand">
     <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OnyxLand" />
       <module name="onyx-land" />
@@ -43,9 +89,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="onyx-land" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Buildings.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Buildings" />
+      <option name="MAIN_CLASS_NAME" value="Buildings.PathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OnyxLand" />
+        <item itemvalue="JUnit.PathTest" />
       </list>
     </recent_temporary>
   </component>

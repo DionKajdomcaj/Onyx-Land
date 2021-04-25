@@ -25,6 +25,7 @@ public class Path {
     }
 
     public void draw(Graphics g){
+
         g.drawImage(img,position.getX(),position.getY(),1*35,1*35,null);
     }
 

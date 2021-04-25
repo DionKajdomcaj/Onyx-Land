@@ -50,7 +50,7 @@ public class GameEngine extends JPanel implements MouseListener {
         start();
 
         //START PATHS AND MARKING THEM IN MATRIX
-        //paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(665,70),"./src/img/entrance.jpg"));
+        paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(665,70),"./src/img/entrance.jpg"));
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(630,70),"./src/img/dirty-path.JPG"));
         paths_matrix[70/35][630/35] = 1;
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(595,70),"./src/img/dirty-path.JPG"));
