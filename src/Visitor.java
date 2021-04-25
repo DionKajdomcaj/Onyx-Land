@@ -1,15 +1,30 @@
 import Point.Point;
 import Staff.Staff;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 public class Visitor {
     private int moneyToSpend;
     private int mood;
     private Point position;
-    public String img_url = "./src/img/visitor2.png";
-    public Visitor(Point pos){
-        this.position=new Point(pos);
+    public BufferedImage img;
+    public Visitor(){
+        this.position=new Point(665, 70);
         this.moneyToSpend=1500;
         this.mood=50;
+
+        try {
+            this.img = ImageIO.read(new File("./src/img/visitors2.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void draw(Graphics g){
+        g.drawImage(img,position.getX(),position.getY(),35,35,null);//x=width, y=height
     }
     public int getMood(){
         return mood;

@@ -72,8 +72,8 @@ public abstract class Buildings {
     }
 
      */
-    //public int getMaxVisitors() {return this.maxVisitors;}
-   // public int getCurrentLevel() {return this.level;}
+    // public int getMaxVisitors() {return this.maxVisitors;}
+    // public int getCurrentLevel() {return this.level;}
     public boolean collides(Buildings other){
         Rectangle current = new Rectangle(this.position.getX(),this.position.getY(),this.size.getX(),this.size.getY());
         Rectangle notCurrent = new Rectangle(other.position.getX(),other.position.getY(),other.size.getX(),other.size.getY());

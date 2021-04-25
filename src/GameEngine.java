@@ -2,7 +2,7 @@ import Buildings.*;
 import Buildings.Gargens.Gardens;
 import Staff.*;
 import Point.Point;
-
+import CONSTANTS.CONSTANTS;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -28,14 +28,17 @@ public class GameEngine extends JPanel implements MouseListener {
     ArrayList<Buildings> buildings;
     ArrayList<Staff>staff;
     ArrayList<Path> paths;
+    int[][] paths_matrix;
     ArrayList<Gardens>gardens;
     JButton menuButton;
     JButton settingsButton;
     JLabel numberOfVisitors;
     JLabel averageMood;
-
+    int number_of_visitors = 1;
+    private Timer timer;
+    boolean flag = false;
     Object temporary = null;
-
+    boolean is_builded = false;
     int state = 0;
 
     public GameEngine(int row, int col) {
@@ -45,8 +48,24 @@ public class GameEngine extends JPanel implements MouseListener {
         buildings = new ArrayList<>();
         paths = new ArrayList<>();
         gardens = new ArrayList<>();
+        paths_matrix = new int[20][];
+        for (int i = 0; i < 20; i++) {
+            paths_matrix[i] = new int[20];
+        }
+        for (int i = 0; i < 1; i++) {
+            visitors.add(new Visitor());
+        }
+        start();
 
-
+        //paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(665,70),"./src/img/entrance.jpg"));
+        paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(630,70),"./src/img/dirty-path.JPG"));
+        paths_matrix[630/35][70/35] = 1;
+        paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(595,70),"./src/img/dirty-path.JPG"));
+        paths_matrix[595/35][70/35] = 1;
+        paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(560,70),"./src/img/dirty-path.JPG"));
+        paths_matrix[560/35][70/35] = 1;
+        paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(525,70),"./src/img/dirty-path.JPG"));
+        paths_matrix[525/35][70/35] = 1;
 
         addMouseListener(this);
 
@@ -68,14 +87,6 @@ public class GameEngine extends JPanel implements MouseListener {
 
         BufferedImage img = null;
         BufferedImage img2 = null;
-        /*for(Buildings b : buildings){
-            for(Buildings b2 : buildings){
-                if(b.collides(b2) && !b.equals(b2)){
-                    b.draw(g2);
-                }
-            }
-        }*/
-
 
 
         try {
@@ -101,8 +112,40 @@ public class GameEngine extends JPanel implements MouseListener {
         for(Gardens garden : gardens){
             garden.draw(g);
         }
+        if (paths.size() > 5) {
+            flag = true;
+            /*System.out.println(is_builded);
+            System.out.println(paths.size() + "    " + number_of_visitors + "      " + (paths.size() - number_of_visitors)%3);*/
+            //every 3 new path number of visitors increases by 1 starting from 5
+            if (paths.size() - number_of_visitors != 0 && paths.size()%3 == 0 && is_builded) {
+                number_of_visitors++;
+                visitors.add(new Visitor());
+                is_builded = false;
+            }
+        }
+        for (Visitor v: visitors) {
+            v.draw(g);
+        }
+    }
 
+    public void start() {
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
 
+                if (flag) {
+                    for (int i = 0; i < visitors.size(); i++) {
+                        Point p = new Point(visitors.get(i).getPosition().x - 8, visitors.get(i).getPosition().y);
+                        visitors.get(i).setPosition(p);
+                    }
+                    repaint();
+                }
+
+            }
+
+        });
+
+        timer.start();
     }
 
     private int[] transform_eXeY_to_CellXCellY(int x, int y) {
@@ -264,6 +307,10 @@ public class GameEngine extends JPanel implements MouseListener {
             if (EnoughPlace(xy, paths.get(paths.size()-1).getSize(), paths.get(paths.size()-1).getSize())) {
                 state = 0;
                 paths.get(paths.size()-1).position = new Point(xy[0], xy[1]);
+                paths_matrix[xy[0]/35][xy[1]/35] = 1;
+                if (paths.size() > 5) {
+                    is_builded = true;
+                }
                 repaint();
                 player.setAmountOfMoney(player.getamountOfMoney()-paths.get(paths.size()-1).getPrice());
             }
@@ -298,17 +345,5 @@ public class GameEngine extends JPanel implements MouseListener {
 
     }
 
-
-
-    class NewFrameListener implements ActionListener {
-        public void actionPerformed(ActionEvent ae){
-
-
-
-
-
-        }
-
-    }
 }
 

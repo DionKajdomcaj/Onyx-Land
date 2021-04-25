@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Added menu part to TopPanel settingsButton">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Building function - intersection between objects handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TopPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine$NewFrameListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Buildings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buildings/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/visitors2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/visitors2.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,17 +46,6 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Main Onyxland" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OnyxLand" />
       <module name="onyx-land" />

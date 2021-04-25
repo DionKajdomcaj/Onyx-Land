@@ -12,6 +12,7 @@ public class Path {
     private int price;
     private final int size=1;
     public Point position;
+
     public BufferedImage img;
     public Path(int price, Point pos, String src){
         this.price=price;
