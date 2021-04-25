@@ -21,7 +21,7 @@ public class CONSTANTS {
     static public final String ATM_TIME = "0:30";
     static public final String ATM_TICKET = "0";
     static public final String ATM_SERVICE = "10";
-    static public final String ATM_URL = "img/atm.png";
+    static public final String ATM_URL = "img/atm2.jpg";
 
     static public final String SEC_PRICE = "200";
     static public final String SEC_MOODIMPROVE = "0";

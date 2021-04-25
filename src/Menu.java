@@ -492,6 +492,8 @@ public class Menu extends JFrame {
                 ge.state = 1;
                 ge.repaint();
 
+
+
                 switch(object_naming)
                 {
                     case "Hot-Dogs":
@@ -499,6 +501,7 @@ public class Menu extends JFrame {
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE));
                             ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg"));
                             //ge.temporary = new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg");
+                            //ge.buildings.add(new Restaurant(new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg"));
                             ge.state = 1;
 
                         }
@@ -514,7 +517,7 @@ public class Menu extends JFrame {
                     case "ATM":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.ATM_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.ATM_PRICE));
-                            ge.buildings.add(new Atm(object_naming,Integer.parseInt(CONSTANTS.ATM_PRICE),Integer.parseInt(CONSTANTS.ATM_TICKET),new Point(2,1),new Point(0,0),"src/img/hot-dogs.jpg",10000));
+                            ge.buildings.add(new Atm(object_naming,Integer.parseInt(CONSTANTS.ATM_PRICE),Integer.parseInt(CONSTANTS.ATM_TICKET),new Point(1,1),new Point(0,0),"src/img/atm2.jpg" ,10000));
                             ge.state = 1;
 
                         }
@@ -540,7 +543,7 @@ public class Menu extends JFrame {
                     case "Cafe":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.CAFE_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.CAFE_PRICE));
-                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.CAFE_PRICE),Integer.parseInt(CONSTANTS.CAFE_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.CAFE_MOODIMPROVE),new Point(0,0),"src/img/cafe.jpg"));
+                            ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.CAFE_PRICE),Integer.parseInt(CONSTANTS.CAFE_TICKET),new Point(2,2),Integer.parseInt(CONSTANTS.CAFE_MOODIMPROVE),new Point(0,0),"src/img/cafe.jpg"));
                             ge.state = 1;
 
                         }
