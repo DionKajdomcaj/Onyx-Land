@@ -75,6 +75,12 @@ public class TopPanel extends JPanel {
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                switch (g.state) {
+                    case 1: g.buildings.remove(g.buildings.size() - 1); break;
+                    case 2: g.paths.remove(g.paths.size() - 1); break;
+                    case 3: g.gardens.remove(g.gardens.size() - 1); break;
+                }
+                g.state = 0;
                 Menu buildMenuFunction = new Menu(g,moneyOfPlayer);
 //                JFrame f = new JFrame("Menu");
 //                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

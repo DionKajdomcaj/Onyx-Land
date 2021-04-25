@@ -34,7 +34,7 @@ public class GameEngine extends JPanel implements MouseListener {
     JLabel numberOfVisitors;
     JLabel averageMood;
 
-    Buildings builds = null;
+    Object temporary = null;
 
     int state = 0;
 
@@ -116,85 +116,166 @@ public class GameEngine extends JPanel implements MouseListener {
         int cy = y/35 * 35;
         return new int[]{cx, cy};
     }
-    private boolean NOTenoughPlace(int[] xy, int sizeX, int sizeY) {
+    private boolean EnoughPlace(int[] xy, int sizeX, int sizeY) {
 
-        int right_top_X4 = xy[0] + sizeX;
-        int right_top_Y4 = xy[1];
-        int left_bottom_X3 = xy[0];
-        int left_bottom_Y3 = xy[1] + sizeY;
-        System.out.println("entered");
-        System.out.println(buildings.size());
+        int a_x = xy[0] / 35;
+        int a_y = xy[1] / 35;
+        Rectangle rect0 = new Rectangle(a_x, a_y, sizeX, sizeY);
 
-        for (int i = 0; i < buildings.size()-1; i++) {
-            int right_top_X2 = buildings.get(i).getPosition().x + buildings.get(i).getSize().x;
-            int right_top_Y2 = buildings.get(i).getPosition().y;
-            int left_bottom_X1 = buildings.get(i).getPosition().x;
-            int left_bottom_Y1 = buildings.get(i).getPosition().y + buildings.get(i).getSize().y;
+        if (state == 1) {
 
-            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
-                return true;
+            if (buildings.size() > 1) {
+
+                for (int i = 0; i < buildings.size() - 1; i++) {
+                    int b_x = buildings.get(i).position.x / 35;
+                    int b_y = buildings.get(i).position.y / 35;
+
+                    Rectangle rect1 = new Rectangle(b_x, b_y, buildings.get(i).getSize().x, buildings.get(i).getSize().y);
+
+                    if (rect0.intersects(rect1)) {
+                        System.out.println("intersects");
+                        return false;
+                    }
+                }
             }
-            System.out.println(i);
 
-        }
-        for (int i = 0; i < gardens.size()-1; i++) {
-            int right_top_X2 = gardens.get(i).getPosition().x + gardens.get(i).getSize().x;
-            int right_top_Y2 = gardens.get(i).getPosition().y;
-            int left_bottom_X1 = gardens.get(i).getPosition().x;
-            int left_bottom_Y1 = gardens.get(i).getPosition().y + gardens.get(i).getSize().y;
+            for (int i = 0; i < paths.size() - 1; i++) {
+                int b_x = paths.get(i).position.x / 35;
+                int b_y = paths.get(i).position.y / 35;
 
-            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
-                return true;
+                Rectangle rect1 = new Rectangle(b_x, b_y, paths.get(i).getSize(), paths.get(i).getSize());
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < gardens.size() - 1; i++) {
+                int b_x = gardens.get(i).position.x / 35;
+                int b_y = gardens.get(i).position.y / 35;
+
+                Rectangle rect1 = new Rectangle(b_x, b_y, gardens.get(i).getSize().x, gardens.get(i).getSize().y);
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
             }
         }
-        for (int i = 0; i < paths.size()-1; i++) {
-            int right_top_X2 = paths.get(i).getPosition().x + paths.get(i).getSize();
-            int right_top_Y2 = paths.get(i).getPosition().y;
-            int left_bottom_X1 = paths.get(i).getPosition().x;
-            int left_bottom_Y1 = paths.get(i).getPosition().y + paths.get(i).getSize();
+        if (state == 2) {
 
-            if (left_bottom_X3 > right_top_X2 || left_bottom_Y3 > right_top_Y2 || left_bottom_X1 > right_top_X4 || left_bottom_Y1 > right_top_Y4) {
-                return true;
+            if (paths.size() > 1) {
+
+                for (int i = 0; i < paths.size() - 1; i++) {
+                    int b_x = paths.get(i).position.x / 35;
+                    int b_y = paths.get(i).position.y / 35;
+
+                    Rectangle rect1 = new Rectangle(b_x, b_y, paths.get(i).getSize(), paths.get(i).getSize());
+
+                    if (rect0.intersects(rect1)) {
+                        System.out.println("intersects");
+                        return false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < buildings.size() - 1; i++) {
+                int b_x = buildings.get(i).position.x / 35;
+                int b_y = buildings.get(i).position.y / 35;
+
+                Rectangle rect1 = new Rectangle(b_x, b_y, buildings.get(i).getSize().x, buildings.get(i).getSize().y);
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < gardens.size() - 1; i++) {
+                int b_x = gardens.get(i).position.x / 35;
+                int b_y = gardens.get(i).position.y / 35;
+
+                Rectangle rect1 = new Rectangle(b_x, b_y, gardens.get(i).getSize().x, gardens.get(i).getSize().y);
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
             }
         }
-        return false;
+        if (state == 3) {
+
+            if (gardens.size() > 1) {
+
+                for (int i = 0; i < gardens.size() - 1; i++) {
+                    int b_x = gardens.get(i).position.x / 35;
+                    int b_y = gardens.get(i).position.y / 35;
+
+                    Rectangle rect1 = new Rectangle(b_x, b_y, gardens.get(i).getSize().x, gardens.get(i).getSize().y);
+
+                    if (rect0.intersects(rect1)) {
+                        System.out.println("intersects");
+                        return false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < buildings.size() - 1; i++) {
+                int b_x = buildings.get(i).position.x / 35;
+                int b_y = buildings.get(i).position.y / 35;
+
+                Rectangle rect1 = new Rectangle(b_x, b_y, buildings.get(i).getSize().x, buildings.get(i).getSize().y);
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < paths.size() - 1; i++) {
+                int b_x = paths.get(i).position.x / 35;
+                int b_y = paths.get(i).position.y / 35;
+
+                Rectangle rect1 = new Rectangle(b_x, b_y, paths.get(i).getSize(), paths.get(i).getSize());
+
+                if (rect0.intersects(rect1)) {
+                    System.out.println("intersects");
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
     @Override
     public void mouseClicked(MouseEvent e) {
         int[] xy = transform_eXeY_to_CellXCellY(e.getX(), e.getY());
 
         if (state == 1) {
-//            if (NOTenoughPlace(xy, buildings.get(buildings.size()-1).getSize().x, buildings.get(buildings.size()-1).getSize().y)) {
-//                /*buildings.remove(buildings.size() - 1);
-//                state = 0;*/
-//                return;
-//            }
-            buildings.get(buildings.size()-1).position = new Point(xy[0], xy[1]);
-            repaint();
-            player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
+            if (EnoughPlace(xy, buildings.get(buildings.size()-1).getSize().x, buildings.get(buildings.size()-1).getSize().y)) {
+                state = 0;
+                buildings.get(buildings.size()-1).position = new Point(xy[0], xy[1]);
+                repaint();
+                player.setAmountOfMoney(player.getamountOfMoney()-buildings.get(buildings.size()-1).getPrice());
+            }
         }
         else if(state == 2){
-//            if (NOTenoughPlace(xy, paths.get(paths.size()-1).getSize(), paths.get(paths.size()-1).getSize())) {
-//                /*paths.remove(paths.size() - 1);
-//                state = 0;*/
-//                return;
-//            }
-            paths.get(paths.size()-1).position = new Point(xy[0], xy[1]);
-            repaint();
-            player.setAmountOfMoney(player.getamountOfMoney()-paths.get(paths.size()-1).getPrice());
+            if (EnoughPlace(xy, paths.get(paths.size()-1).getSize(), paths.get(paths.size()-1).getSize())) {
+                state = 0;
+                paths.get(paths.size()-1).position = new Point(xy[0], xy[1]);
+                repaint();
+                player.setAmountOfMoney(player.getamountOfMoney()-paths.get(paths.size()-1).getPrice());
+            }
         }
         else if(state == 3){
-//            if (NOTenoughPlace(xy, gardens.get(gardens.size()-1).getSize().x, gardens.get(gardens.size()-1).getSize().y)) {
-//                /*gardens.remove(gardens.size() - 1);
-//                state = 0;*/
-//                return;
-//            }
-            gardens.get(gardens.size()-1).position = new Point(xy[0], xy[1]);
-            repaint();
-            player.setAmountOfMoney(player.getamountOfMoney()-gardens.get(gardens.size()-1).getPrice());
+            if (EnoughPlace(xy, gardens.get(gardens.size()-1).getSize().x, gardens.get(gardens.size()-1).getSize().y)) {
+                state = 0;
+                gardens.get(gardens.size()-1).position = new Point(xy[0], xy[1]);
+                repaint();
+                player.setAmountOfMoney(player.getamountOfMoney()-gardens.get(gardens.size()-1).getPrice());
+            }
         }
-        state = 0;
-
     }
 
     @Override

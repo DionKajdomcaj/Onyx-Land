@@ -388,7 +388,7 @@ public class Menu extends JFrame {
         BufferedImage img = null;
         try {
             object_pic_url = "./src/" + object_pic_url;
-            System.out.println(object_pic_url);
+            //System.out.println(object_pic_url);
             img = ImageIO.read(new File(object_pic_url));
             //img = ImageIO.read(this.getClass().getResource(object_pic_url));
         } catch (IOException ioException) {
@@ -489,7 +489,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
-                ge.state = 1;
+//                ge.state = 1;
                 ge.repaint();
 
                 switch(object_naming)
@@ -498,6 +498,7 @@ public class Menu extends JFrame {
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE));
                             ge.buildings.add(new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg"));
+                            //ge.temporary = new Restaurant(object_naming,Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE),Integer.parseInt(CONSTANTS.HOT_DOGS_TICKET),new Point(2,1),Integer.parseInt(CONSTANTS.HOT_DOGS_MOODIMPROVE),new Point(0,0),"src/img/hot-dogs.jpg");
                             ge.state = 1;
 
                         }
@@ -588,7 +589,6 @@ public class Menu extends JFrame {
                     case "Dirt Path":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE));
-                            //ge.buildings.add(new Path(object_naming,Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),Integer.parseInt(CONSTANTS.DIRT_PATH_TICKET),new Point(3,1),Integer.parseInt(CONSTANTS.DIRT_PATH_MOODIMPROVE),new Point(0,0),"./src/img/trampoline.jpg"));
                             ge.paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(0,0),"./src/img/dirty-path.JPG"));
                             ge.state = 2;
 
@@ -614,7 +614,7 @@ public class Menu extends JFrame {
                     case "Golden Path":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.GOLDEN_PATH_PRICE)){
                             ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.GOLDEN_PATH_PRICE));
-                            ge.paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(0,0),"./src/img/golden-path.JPG"));
+                            ge.paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE),new Point(0,0),"./src/img/golden-path.png"));
                             ge.state = 2;
 
                         }
