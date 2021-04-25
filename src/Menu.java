@@ -489,7 +489,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 f.dispose();
 
-//                ge.state = 1;
+                ge.state = 1;
                 ge.repaint();
 
                 switch(object_naming)
