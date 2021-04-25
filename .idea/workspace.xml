@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Added menu part to TopPanel settingsButton">
+      <change afterPath="$PROJECT_DIR$/src/img/atm2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/entrance.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CONSTANTS/CONSTANTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CONSTANTS/CONSTANTS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TopPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Main Onyxland" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LIZA\IdeaProjects\onyx-land7\src\img" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
