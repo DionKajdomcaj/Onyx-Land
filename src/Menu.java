@@ -50,7 +50,7 @@ public class Menu extends JFrame {
         gardens.setPreferredSize(new Dimension(150,50));
         gardens.setBackground(new Color(168, 111, 151));
 
-        String[] amusementsNames = {"Security Building","ATM","Roller Coaster", "Swing", "Wooden Chute", "Trampoline" };//, "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
+        String[] amusementsNames = {/*"Security Building","ATM",*/"Roller Coaster", "Swing", "Wooden Chute", "Trampoline" };//, "Labyrinth", "Stone Chute", "Football", "Jump Tower", "Carousel", "Bungee Jump", "Drop Tower", "Laugh room"};
         for (String s: amusementsNames) {
             JMenuItem i = new JMenuItem(s);
             i.addActionListener(new ActionListener() {
@@ -69,22 +69,22 @@ public class Menu extends JFrame {
                     setBackground(f);
 
                     switch (s) {
-                        case "Security Building":
-                            showObjectProperties(container, f, s, CONSTANTS.SEC_URL,
-                                    CONSTANTS.SEC_PRICE,
-                                    CONSTANTS.SEC_MOODIMPROVE,
-                                    CONSTANTS.SEC_TIME,
-                                    CONSTANTS.SEC_TICKET,
-                                    CONSTANTS.SEC_SERVICE);
-                            break;
-                        case "ATM":
-                            showObjectProperties(container, f, s, CONSTANTS.ATM_URL,
-                                    CONSTANTS.ATM_PRICE,
-                                    CONSTANTS.ATM_MOODIMPROVE,
-                                    CONSTANTS.ATM_TIME,
-                                    CONSTANTS.ATM_TICKET,
-                                    CONSTANTS.ATM_SERVICE);
-                            break;
+//                        case "Security Building":
+//                            showObjectProperties(container, f, s, CONSTANTS.SEC_URL,
+//                                    CONSTANTS.SEC_PRICE,
+//                                    CONSTANTS.SEC_MOODIMPROVE,
+//                                    CONSTANTS.SEC_TIME,
+//                                    CONSTANTS.SEC_TICKET,
+//                                    CONSTANTS.SEC_SERVICE);
+//                            break;
+//                        case "ATM":
+//                            showObjectProperties(container, f, s, CONSTANTS.ATM_URL,
+//                                    CONSTANTS.ATM_PRICE,
+//                                    CONSTANTS.ATM_MOODIMPROVE,
+//                                    CONSTANTS.ATM_TIME,
+//                                    CONSTANTS.ATM_TICKET,
+//                                    CONSTANTS.ATM_SERVICE);
+//                            break;
                         case "Roller Coaster":
                             showObjectProperties(container, f, s, CONSTANTS.ROLER_COASTER_URL,
                                     CONSTANTS.ROLER_COASTER_PRICE,
@@ -506,22 +506,22 @@ public class Menu extends JFrame {
 
                         }
                         break;
-                    case "Security Building":
-                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.SEC_PRICE)){
-                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.SEC_PRICE));
-                            ge.buildings.add(new SecurityBuilding(object_naming,Integer.parseInt(CONSTANTS.SEC_PRICE),Integer.parseInt(CONSTANTS.SEC_PRICE),new Point(4,2),new Point(0,0),"src/img/sec.png"));
-                            ge.state = 1;
-
-                        }
-                        break;
-                    case "ATM":
-                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.ATM_PRICE)){
-                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.ATM_PRICE));
-                            ge.buildings.add(new Atm(object_naming,Integer.parseInt(CONSTANTS.ATM_PRICE),Integer.parseInt(CONSTANTS.ATM_TICKET),new Point(1,1),new Point(0,0),"src/img/atm2.jpg" ,10000));
-                            ge.state = 1;
-
-                        }
-                        break;
+//                    case "Security Building":
+//                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.SEC_PRICE)){
+//                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.SEC_PRICE));
+//                            ge.buildings.add(new SecurityBuilding(object_naming,Integer.parseInt(CONSTANTS.SEC_PRICE),Integer.parseInt(CONSTANTS.SEC_PRICE),new Point(4,2),new Point(0,0),"src/img/sec.png"));
+//                            ge.state = 1;
+//
+//                        }
+                        //break;
+//                    case "ATM":
+//                        if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.ATM_PRICE)){
+//                            ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.ATM_PRICE));
+//                            ge.buildings.add(new Atm(object_naming,Integer.parseInt(CONSTANTS.ATM_PRICE),Integer.parseInt(CONSTANTS.ATM_TICKET),new Point(1,1),new Point(0,0),"src/img/atm2.jpg" ,10000));
+//                            ge.state = 1;
+//
+//                        }
+//                        break;
 
                     case "Drinking Fountain":
                         if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.DRINKING_FOUNTAIN_PRICE)){
