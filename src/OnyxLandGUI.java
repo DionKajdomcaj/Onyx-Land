@@ -50,7 +50,6 @@ public class OnyxLandGUI extends JFrame{
                                 menuframe.setVisible(false);
 
                                 OnyxLandGUI gui = new OnyxLandGUI(2);
-
                                 //menuframe.getContentPane().removeAll();
                                 //menuframe.getContentPane().repaint();
                             }
@@ -100,8 +99,6 @@ public class OnyxLandGUI extends JFrame{
             gameFrame.setLayout(new BorderLayout());
             gameFrame.getContentPane().add(tp, BorderLayout.NORTH);
             gameFrame.getContentPane().add(ge, BorderLayout.CENTER);
-
-
             gameFrame.setVisible(true);
         }
     }

@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Made visitors movable and matrices for paths created">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Updated version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Atm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/SecurityBuilding.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Policeman.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Security.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Thief.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings/Atm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Atm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings/SecurityBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/SecurityBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OnyxLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnyxLand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Policeman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/Policeman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/SecurityMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/SecurityMan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Buildings/AtmTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Buildings/SecurityBuildingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Staff/PolicemanTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Staff/SecurityManTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Staff/ThiefTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +43,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,7 +144,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\LIZA\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -210,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619360662969</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated version">
+      <created>1620033417430</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620033417430</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +233,8 @@
     <MESSAGE value="Added menu part to TopPanel settingsButton" />
     <MESSAGE value="Made visitors movable" />
     <MESSAGE value="Made visitors movable and matrices for paths created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made visitors movable and matrices for paths created" />
+    <MESSAGE value="Updated version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/onyx_land10$AtmTest.ic" NAME="AtmTest Coverage Results" MODIFIED="1619427588927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
