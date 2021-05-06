@@ -3,12 +3,12 @@ image: maven:latest
 build-job:
   stage: build
   script:
-    - mvn compile
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
 
 test-job1:
   stage: test
   script:
-    - mvn test
     - echo "This job tests something"
 
 test-job2:
@@ -22,5 +22,4 @@ test-job2:
 deploy-prod:
   stage: deploy
   script:
-    - mvn deploy
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
