@@ -1,3 +1,4 @@
+import Buildings.*;
 import Point.Point;
 import Staff.Staff;
 
@@ -49,7 +50,16 @@ public class Visitor {
     public void setPrevPosition(Point pos){
         previous_position=new Point(pos);
     }
-    public void useBuilding(){}
+    public void useRestaurants(Restaurant r,int i){
+        if(i==1){
+            setMood(getMood() + r.getMoodImprovement());
+        }
+        else{
+            setMood(getMood() - r.getMoodImprovement());
+        }
+
+
+    }
     public void payTicket(){}
     public void throwTrash(){}
     public void exit(){}
