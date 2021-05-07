@@ -327,6 +327,7 @@ public class GameEngine extends JPanel implements MouseListener {
         return selected;
     }
 
+
     public void start() {
         timer = new Timer(2000, new ActionListener() {
             @Override
@@ -509,6 +510,62 @@ public class GameEngine extends JPanel implements MouseListener {
         return true;
     }
 
+    private void createAdjacentNodes() {
+//        #: we here
+//        -x- : between which do we choose
+//
+//        x   x   x   x   x
+//
+//        y   0   0  -1-  1   0
+//        y   0  -0-  #  -1-  1
+//        y   0   0  -1-  0   0
+
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                if (paths_matrix[i][j] == 1) {
+                    for (Path p : paths) {
+
+
+
+                        if (p.getPosition().x / 35 == i && p.getPosition().y / 35 == j) {
+                            try {
+                                if (paths_matrix[i-1][j] == 1) {
+
+                                }
+                            } catch (IndexOutOfBoundsException e) {
+                                //direction3 = -1;
+                            }
+
+                            try {
+                                if (paths_matrix[i][j+1] == 1) {
+
+                                }
+                            } catch (IndexOutOfBoundsException e) {
+                                //direction3 = -1;
+                            }
+
+                            try {
+                                if (paths_matrix[i+1][j] == 1) {
+
+                                }
+                            } catch (IndexOutOfBoundsException e) {
+                                //direction3 = -1;
+                            }
+
+                            try {
+                                if (paths_matrix[i][j-1] == 1) {
+
+                                }
+                            } catch (IndexOutOfBoundsException e) {
+                                //direction3 = -1;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
     @Override
     public void mouseClicked(MouseEvent e) {
         int[] xy = transform_eXeY_to_CellXCellY(e.getX(), e.getY());

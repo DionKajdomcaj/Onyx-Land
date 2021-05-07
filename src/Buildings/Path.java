@@ -1,4 +1,5 @@
 package Buildings;
+import DFS.Node;
 import Point.Point;
 
 import javax.imageio.ImageIO;
@@ -7,11 +8,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Path {
     private int price;
     private final int size=1;
     public Point position;
+    public ArrayList<Node> nodes;
 
     public BufferedImage img;
     public Path(int price, Point pos, String src){
