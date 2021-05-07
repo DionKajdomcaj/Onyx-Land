@@ -9,7 +9,7 @@ public class Player {
         return amountOfMoney;
     }
     public void setAmountOfMoney(int n) {
-        this.amountOfMoney+=n;
+        this.amountOfMoney=n;
     }
 
 
