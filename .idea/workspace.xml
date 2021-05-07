@@ -22,43 +22,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Updated version with top Panel part 1">
-      <change afterPath="$PROJECT_DIR$/src/Trash.java" afterDir="false" />
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Visitors are littering now (throw the rubbish)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onyx-land.iml" beforeDir="false" afterPath="$PROJECT_DIR$/onyx-land.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/MenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/MenuPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/MouseInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/OnyxLandGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Repairman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Staff/Repairman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Staff/Staff.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CONSTANTS/CONSTANTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CONSTANTS/CONSTANTS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Staff/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/Cleaner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +195,7 @@
       <workItem from="1618947300463" duration="508000" />
       <workItem from="1618996560393" duration="1852000" />
       <workItem from="1619105737959" duration="7649000" />
-      <workItem from="1620401516995" duration="4592000" />
+      <workItem from="1620401516995" duration="8889000" />
     </task>
     <task id="LOCAL-00001" summary="Building">
       <created>1618937527796</created>
@@ -278,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620396402585</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Visitors are littering now (throw the rubbish)">
+      <created>1620406368017</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1620406368017</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +287,8 @@
     <MESSAGE value="Made visitors movable and matrices for paths created" />
     <MESSAGE value="Updated version" />
     <MESSAGE value="Updated version with top Panel part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version with top Panel part 1" />
+    <MESSAGE value="Visitors are littering now (throw the rubbish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visitors are littering now (throw the rubbish)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest_upgradeTheLevel.ic" NAME="BuildingsTest.upgradeTheLevel Coverage Results" MODIFIED="1619426000445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

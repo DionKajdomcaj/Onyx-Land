@@ -136,5 +136,21 @@ public class CONSTANTS {
     static public final String MINI_FOREST_SERVICE = "0";
     static public final String MINI_FOREST_URL = "img/mini-forest.jpg";
 
+    static public final String CLEANER_PRICE = "20";
+    static public final String CLEANER_MOODIMPROVE = "0";
+    static public final String CLEANER_TIME = "0";
+    static public final String CLEANER_TICKET = "0";
+    static public final String CLEANER_SERVICE = "10";
+    static public final String CLEANER_URL = "img/cleaner2.png";
+
+    static public final String REPAIRMAN_PRICE = "20";
+    static public final String REPAIRMAN_MOODIMPROVE = "0";
+    static public final String REPAIRMAN_TIME = "0";
+    static public final String REPAIRMAN_TICKET = "0";
+    static public final String REPAIRMAN_SERVICE = "12";
+    static public final String REPAIRMAN_URL = "img/repairman2.png";
+
+    static public final String TRASH_MOODIMPROVE = "-2";
+
     public CONSTANTS() {}
 }

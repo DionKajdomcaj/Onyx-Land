@@ -26,6 +26,10 @@ public class GameEngine extends JPanel implements MouseListener {
     ArrayList<Path> paths;
     int[][] paths_matrix;
     ArrayList<Gardens> gardens;
+    ArrayList<Staff> cleaners;
+    ArrayList<Staff> repairmen;
+    boolean cleaner_has_work;
+    boolean repairman_has_work;
     int number_of_visitors = 1;
     private Timer timer;
     boolean flag = false;
@@ -46,6 +50,9 @@ public class GameEngine extends JPanel implements MouseListener {
         paths = new ArrayList<>();
         gardens = new ArrayList<>();
         trashes = new ArrayList<>();
+        cleaners = new ArrayList<>();
+        repairmen = new ArrayList<>();
+
         paths_matrix = new int[20][];
         for (int i = 0; i < 20; i++) {
             paths_matrix[i] = new int[20];
@@ -143,12 +150,13 @@ public class GameEngine extends JPanel implements MouseListener {
                 } else {
                     Random r = new Random();
                     int k = 0 + (int) (Math.random() * 1000);
-                    System.out.println("---" + k + "--" + v.trashThrower + "---");
-                    if (k > 950 && v.trashThrower < 0.6) {
+                    //System.out.println("---" + k + "--" + v.trashThrower + "---");
+                    if (k > 970 && v.trashThrower < 0.7) {
                         Trash trash = new Trash();
                         trash.setPosition(v.getPosition());
                         trashes.add(trash);
                         was_thrown = true;
+                        cleaner_has_work = true;
                         //trash.draw(g);
                     }
                     v.draw(g);
@@ -341,6 +349,11 @@ public class GameEngine extends JPanel implements MouseListener {
                             visitors.get(i).visitor_passed_2_cells += 1;
                         }
                     }
+
+                    if (cleaner_has_work) {
+
+                    }
+
                     repaint();
                 }
 
@@ -847,7 +860,8 @@ public class GameEngine extends JPanel implements MouseListener {
 
             f.getContentPane().add(container, BorderLayout.CENTER);
         }
-         class Menu extends JFrame {
+
+        class Menu extends JFrame {
             GameEngine ge = null;
 
             public Menu(GameEngine g) {
@@ -878,6 +892,11 @@ public class GameEngine extends JPanel implements MouseListener {
                 foods.setBackground(new Color(168, 111, 151));
 
                 JMenu gardens = new JMenu("Gardens");
+                gardens.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
+                gardens.setPreferredSize(new Dimension(150,50));
+                gardens.setBackground(new Color(168, 111, 151));
+
+                JMenu staffs = new JMenu("Staff");
                 gardens.setFont(new Font("Bernard MT Condensed",Font.PLAIN,16));
                 gardens.setPreferredSize(new Dimension(150,50));
                 gardens.setBackground(new Color(168, 111, 151));
@@ -1150,10 +1169,56 @@ public class GameEngine extends JPanel implements MouseListener {
                     gardens.add(i);
                 }
 
+                String[] staffNames = {"Cleaner", "Repairman"};
+                for (String s: staffNames) {
+                    JMenuItem i = new JMenuItem(s);
+                    i.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            JPanel container = new JPanel();
+                            container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                            container.setLayout(new GridBagLayout());
+
+                            f.getContentPane().removeAll();
+                            f.getContentPane().repaint();
+                            f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                            //f.setSize(500,500);
+                            //f.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                            f.setLayout(new BorderLayout());
+                            setBackground(f);
+
+                            switch (s) {
+                                case "Cleaner":
+                                    showObjectProperties(container, f, s,
+                                            CONSTANTS.CLEANER_URL,
+                                            CONSTANTS.CLEANER_PRICE,
+                                            CONSTANTS.CLEANER_MOODIMPROVE,
+                                            CONSTANTS.CLEANER_TIME,
+                                            CONSTANTS.CLEANER_TICKET,
+                                            CONSTANTS.CLEANER_SERVICE);
+                                    break;
+                                case "Repairman":
+                                    showObjectProperties(container, f, s,
+                                            CONSTANTS.REPAIRMAN_URL,
+                                            CONSTANTS.REPAIRMAN_PRICE,
+                                            CONSTANTS.REPAIRMAN_MOODIMPROVE,
+                                            CONSTANTS.REPAIRMAN_TIME,
+                                            CONSTANTS.REPAIRMAN_TICKET,
+                                            CONSTANTS.REPAIRMAN_SERVICE);
+                                    break;
+
+                            }
+
+                            f.setVisible(true);
+                        }
+                    });
+                    staffs.add(i);
+                }
                 menuBar.add(amusements);
                 menuBar.add(paths);
                 menuBar.add(foods);
                 menuBar.add(gardens);
+                menuBar.add(staffs);
 
                 f.setJMenuBar(menuBar);
                 f.setVisible(true);
@@ -1312,6 +1377,27 @@ public class GameEngine extends JPanel implements MouseListener {
 
                         switch(object_naming)
                         {
+
+                            case "Repairman":
+                                if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.REPAIRMAN_PRICE)){
+                                    ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.REPAIRMAN_PRICE));
+                                    ge.repairmen.add(new Repairman(new Point(665, 70)));
+
+                                    ge.state = 0;
+
+
+                                }
+                                break;
+
+                            case "Cleaner":
+                                if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.CLEANER_PRICE)){
+                                    ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.CLEANER_PRICE));
+                                    ge.cleaners.add(new Cleaner(new Point(665, 70)));
+
+                                    ge.state = 0;
+                                }
+                                break;
+
                             case "Hot-Dogs":
                                 if(ge.player.getamountOfMoney()>=Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE)){
                                     ge.player.setAmountOfMoney(ge.player.getamountOfMoney()-Integer.parseInt(CONSTANTS.HOT_DOGS_PRICE));
