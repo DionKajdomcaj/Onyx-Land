@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameEngine extends JPanel implements MouseListener {
     Player player;
@@ -31,6 +32,8 @@ public class GameEngine extends JPanel implements MouseListener {
     Object temporary = null;
     boolean is_builded = false;
     int state = 0;
+    ArrayList<Trash> trashes;
+    boolean was_thrown = false;
 
     public GameEngine(int row, int col) {
         super();
@@ -42,6 +45,7 @@ public class GameEngine extends JPanel implements MouseListener {
         buildings = new ArrayList<>();
         paths = new ArrayList<>();
         gardens = new ArrayList<>();
+        trashes = new ArrayList<>();
         paths_matrix = new int[20][];
         for (int i = 0; i < 20; i++) {
             paths_matrix[i] = new int[20];
@@ -50,7 +54,9 @@ public class GameEngine extends JPanel implements MouseListener {
             }
         }
         for (int i = 0; i < 1; i++) {
-            visitors.add(new Visitor());
+            Random r = new Random();
+            double trash_thrower_value = 0 + (1 - 0) * r.nextDouble();
+            visitors.add(new Visitor(trash_thrower_value));
         }
         start();
 
@@ -122,14 +128,48 @@ public class GameEngine extends JPanel implements MouseListener {
             System.out.println(paths.size() + "    " + number_of_visitors + "      " + (paths.size() - number_of_visitors)%3);*/
             if (paths.size() - number_of_visitors != 0 && paths.size() % 3 == 0 && is_builded) {
                 number_of_visitors++;
-                visitors.add(new Visitor());
+                Random r = new Random();
+                double trash_thrower_value = 0 + (1 - 0) * r.nextDouble();
+                visitors.add(new Visitor(trash_thrower_value));
                 top.numberOfVisitors.setText(String.valueOf(this.visitors.size()));
                 is_builded = false;
             }
         }
-        for (Visitor v : visitors) {
-            v.draw(g);
+        if (number_of_visitors > 5) {
+
+            for (Visitor v : visitors) {
+                if (was_thrown) {
+                    v.draw(g);
+                } else {
+                    Random r = new Random();
+                    int k = 0 + (int) (Math.random() * 1000);
+                    System.out.println("---" + k + "--" + v.trashThrower + "---");
+                    if (k > 950 && v.trashThrower < 0.6) {
+                        Trash trash = new Trash();
+                        trash.setPosition(v.getPosition());
+                        trashes.add(trash);
+                        was_thrown = true;
+                        //trash.draw(g);
+                    }
+                    v.draw(g);
+
+                }
+
+            }
+
+            was_thrown = false;
+
+            for(Trash t : trashes) {
+                t.draw(g);
+            }
+
+        } else {
+            for (Visitor v : visitors) {
+                v.draw(g);
+            }
         }
+
+
     }
 
     private Point ChooseDirectionToMove(Point visitor, Point previous) {

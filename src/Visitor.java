@@ -11,13 +11,15 @@ import java.io.IOException;
 public class Visitor {
     public int visitor_passed_2_cells = 0;
     public Point directionToMove = new Point(-35, 0);
-
+    public double trashThrower = 0.0;
     private int moneyToSpend;
     private int mood;
     private Point position;
     private Point previous_position;
     public BufferedImage img;
-    public Visitor(){
+
+    public Visitor(double tth){
+        this.trashThrower = tth;
         this.position=new Point(665, 70);
         this.previous_position = new Point(1000,1000);
         this.moneyToSpend=1500;
@@ -28,6 +30,8 @@ public class Visitor {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
     public void draw(Graphics g){
         g.drawImage(img,position.getX(),position.getY(),35,35,null);//x=width, y=height
