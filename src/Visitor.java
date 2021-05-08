@@ -59,13 +59,9 @@ public class Visitor {
         else{
             setMood(getMood() - r.getMoodImprovement());
         }
-
-
     }
     public void payTicket(){}
     public void throwTrash(){}
     public void exit(){}
-    public void callTheStaff(Staff staff){}
-
 
 }

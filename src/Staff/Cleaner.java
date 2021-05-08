@@ -11,11 +11,15 @@ import java.util.ArrayList;
 
 public class Cleaner extends Staff {
     public BufferedImage img;
-    private Point start_position = new Point(665, 70);
     public boolean is_work = false;
+    public boolean is_move = false;
     public ArrayList<Path> the_way = null;
+    private int paths_passed = 0;
+    public boolean time_to_clean = false;
+
     public Cleaner(Point pos){
         super(pos);
+        this.position = new Point(665, 70);
         setSalaryPerDay(30);
 
         try {
@@ -24,10 +28,33 @@ public class Cleaner extends Staff {
             e.printStackTrace();
         }
     }
-    public void doTheJob(){}
     public void draw(Graphics g){
-        g.drawImage(img,position.getX(),position.getY(),35,35,null);//x=width, y=height
+        g.drawImage(img,position.getX(),position.getY(),20,35,null);//x=width, y=height
     }
 
+    public void updatePosition() {
+        System.out.println(the_way.size() + " size");
+
+        if (is_move)  {
+            System.out.println(paths_passed + " --");
+            position.setX(the_way.get(paths_passed).getPosition().x);
+            position.setY(the_way.get(paths_passed).getPosition().y);
+            paths_passed++;
+        }
+
+        if (paths_passed == the_way.size()-1) {
+            is_move = false;
+            time_to_clean = true;
+        }
+    }
+
+    public void freeToWork() {
+        time_to_clean = false;
+        the_way = null;
+        paths_passed = 0;
+        is_work = false;
+    }
+
+    public void doTheJob(){}
 
 }

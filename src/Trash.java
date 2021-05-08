@@ -27,6 +27,9 @@ public class Trash {
 
     }
 
+    public Point getPosition() {
+        return this.position;
+    }
 
 
 }

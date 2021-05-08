@@ -2,6 +2,7 @@ import Buildings.*;
 import Buildings.Gargens.Gardens;
 import Buildings.Gargens.Grass;
 import Buildings.Gargens.Tree;
+import DFS.DFSAlgorithm;
 import Staff.*;
 import Point.Point;
 import CONSTANTS.CONSTANTS;
@@ -16,6 +17,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class GameEngine extends JPanel implements MouseListener {
@@ -27,8 +29,8 @@ public class GameEngine extends JPanel implements MouseListener {
     int[][] paths_matrix;
     Path[][] PATHS_matrix;
     ArrayList<Gardens> gardens;
-    ArrayList<Staff> cleaners;
-    ArrayList<Staff> repairmen;
+    ArrayList<Cleaner> cleaners;
+    ArrayList<Repairman> repairmen;
     boolean cleaner_has_work;
     boolean repairman_has_work;
     int number_of_visitors = 1;
@@ -39,7 +41,7 @@ public class GameEngine extends JPanel implements MouseListener {
     int state = 0;
     ArrayList<Trash> trashes;
     boolean was_thrown = false;
-
+    DFSAlgorithm dfsa;
     public GameEngine(int row, int col) {
         super();
 
@@ -57,6 +59,7 @@ public class GameEngine extends JPanel implements MouseListener {
         paths_matrix = new int[20][];
         PATHS_matrix = new Path[20][];
 
+        dfsa = new DFSAlgorithm();
         for (int i = 0; i < 20; i++) {
             paths_matrix[i] = new int[20];
             PATHS_matrix[i] = new Path[20];
@@ -75,6 +78,8 @@ public class GameEngine extends JPanel implements MouseListener {
 
         //START PATHS AND MARKING THEM IN MATRIX
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(665, 70), "./src/img/entrance.jpg"));
+        paths_matrix[70 / 35][665 / 35] = 1;
+        PATHS_matrix[70 / 35][665 / 35] = paths.get(paths.size()-1);
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(630, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][630 / 35] = 1;
         PATHS_matrix[70 / 35][630 / 35] = paths.get(paths.size()-1);
@@ -87,6 +92,7 @@ public class GameEngine extends JPanel implements MouseListener {
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(525, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][525 / 35] = 1;
         PATHS_matrix[70 / 35][525 / 35] = paths.get(paths.size()-1);
+
         top = new TopPanel(this);
         top.numberOfVisitors.setText(String.valueOf(this.visitors.size()));
 
@@ -152,22 +158,24 @@ public class GameEngine extends JPanel implements MouseListener {
                 is_builded = false;
             }
         }
-        if (number_of_visitors > 5) {
+        if (number_of_visitors > 2) {
 
             for (Visitor v : visitors) {
                 if (was_thrown) {
                     v.draw(g);
                 } else {
-                    Random r = new Random();
-                    int k = 0 + (int) (Math.random() * 1000);
-                    //System.out.println("---" + k + "--" + v.trashThrower + "---");
-                    if (k > 970 && v.trashThrower < 0.7) {
-                        Trash trash = new Trash();
-                        trash.setPosition(v.getPosition());
-                        trashes.add(trash);
-                        was_thrown = true;
-                        cleaner_has_work = true;
-                        //trash.draw(g);
+                    if (!(v.getPosition() == paths.get(0).getPosition() || v.getPosition() == paths.get(1).getPosition())) {
+                        Random r = new Random();
+                        int k = 0 + (int) (Math.random() * 1000);
+                        //System.out.println("---" + k + "--" + v.trashThrower + "---");
+                        if (k > 100/*970*/ && v.trashThrower < 0.9/*0.7*/) {
+                            Trash trash = new Trash();
+                            trash.setPosition(v.getPosition());
+                            trashes.add(trash);
+                            was_thrown = true;
+                            cleaner_has_work = true;
+                            //trash.draw(g);
+                        }
                     }
                     v.draw(g);
 
@@ -187,8 +195,8 @@ public class GameEngine extends JPanel implements MouseListener {
             }
         }
 
-        if (cleaners.size() > 0 && trashes.size() > 0) {
-
+        for (Cleaner c : cleaners) {
+            c.draw(g);
         }
 
     }
@@ -364,8 +372,36 @@ public class GameEngine extends JPanel implements MouseListener {
                         }
                     }
 
-                    if (cleaner_has_work) {
-
+                    if (trashes.size() > 0) {
+                        for (int i = 0; i < cleaners.size(); i++) {
+                            if (!cleaners.get(i).is_move && !cleaners.get(i).time_to_clean) {
+                                /*for (int k = 0; k < 20; k++)
+                                {
+                                    for (int f = 0; f < 20; f++) {
+                                        if (PATHS_matrix[k][f] == null)
+                                            System.out.print("0 ");
+                                        else
+                                            System.out.print("1 ");
+                                    }
+                                    System.out.println();
+                                }*/
+                                System.out.println(cleaners.get(i).position.x / 35 + " " + cleaners.get(i).position.y / 35);
+                                LinkedList<Path> ll = dfsa.DFS(PATHS_matrix[cleaners.get(i).position.y / 35][cleaners.get(i).position.x / 35],
+                                                               PATHS_matrix[trashes.get(i).getPosition().y / 35][trashes.get(i).getPosition().x / 35]);
+                                cleaners.get(i).the_way = new ArrayList<>(ll);
+                                cleaners.get(i).is_work = true;
+                                cleaners.get(i).is_move = true;
+                            } else if (cleaners.get(i).time_to_clean) {
+                                for (int z = 0; z < trashes.size(); z++) {
+                                    //Doesnt enter here
+                                    if (trashes.get(z).getPosition().equals(cleaners.get(i).position)) {
+                                        trashes.remove(z);
+                                        cleaners.get(i).freeToWork();
+                                    }
+                                }
+                            }
+                            cleaners.get(i).updatePosition();
+                        }
                     }
 
                     repaint();
@@ -539,32 +575,32 @@ public class GameEngine extends JPanel implements MouseListener {
         ArrayList<Path> nodes = new ArrayList<>();
 
         try {
-            if (paths_matrix[x-1][y] == 1) {
-                nodes.add(PATHS_matrix[x-1][y]);
+            if (paths_matrix[y][x-1] == 1) {
+                nodes.add(PATHS_matrix[y][x-1]);
             }
         } catch (IndexOutOfBoundsException e) {
 
         }
 
         try {
-            if (paths_matrix[x][y+1] == 1) {
-                nodes.add(PATHS_matrix[x][y+1]);
+            if (paths_matrix[y+1][x] == 1) {
+                nodes.add(PATHS_matrix[y+1][x]);
             }
         } catch (IndexOutOfBoundsException e) {
 
         }
 
         try {
-            if (paths_matrix[x+1][y] == 1) {
-                nodes.add(PATHS_matrix[x+1][y]);
+            if (paths_matrix[y][x+1] == 1) {
+                nodes.add(PATHS_matrix[y][x+1]);
             }
         } catch (IndexOutOfBoundsException e) {
 
         }
 
         try {
-            if (paths_matrix[x][y-1] == 1) {
-                nodes.add(PATHS_matrix[x][y-1]);
+            if (paths_matrix[y-1][x] == 1) {
+                nodes.add(PATHS_matrix[y-1][x]);
             }
         } catch (IndexOutOfBoundsException e) {
 
