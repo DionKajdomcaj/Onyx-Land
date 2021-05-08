@@ -14,7 +14,7 @@ public class Path {
     private int price;
     private final int size=1;
     public Point position;
-    public ArrayList<Node> nodes;
+    public ArrayList<Path> nodes;
 
     public BufferedImage img;
     public Path(int price, Point pos, String src){
@@ -25,6 +25,7 @@ public class Path {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.nodes = new ArrayList<>();
     }
 
     public void draw(Graphics g){

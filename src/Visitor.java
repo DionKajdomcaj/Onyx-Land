@@ -12,7 +12,6 @@ public class Visitor {
     public int visitor_passed_2_cells = 0;
     public Point directionToMove = new Point(-35, 0);
     public double trashThrower = 0.0;
-    private int moneyToSpend;
     private int mood;
     private Point position;
     private Point previous_position;
@@ -22,7 +21,6 @@ public class Visitor {
         this.trashThrower = tth;
         this.position=new Point(665, 70);
         this.previous_position = new Point(1000,1000);
-        this.moneyToSpend=1500;
         this.mood=50;
 
         try {

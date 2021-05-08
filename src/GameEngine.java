@@ -25,6 +25,7 @@ public class GameEngine extends JPanel implements MouseListener {
     ArrayList<Buildings> buildings;
     ArrayList<Path> paths;
     int[][] paths_matrix;
+    Path[][] PATHS_matrix;
     ArrayList<Gardens> gardens;
     ArrayList<Staff> cleaners;
     ArrayList<Staff> repairmen;
@@ -54,12 +55,17 @@ public class GameEngine extends JPanel implements MouseListener {
         repairmen = new ArrayList<>();
 
         paths_matrix = new int[20][];
+        PATHS_matrix = new Path[20][];
+
         for (int i = 0; i < 20; i++) {
             paths_matrix[i] = new int[20];
+            PATHS_matrix[i] = new Path[20];
             for (int j = 0; j < 20; j++) {
                 paths_matrix[i][j] = 0;
+                PATHS_matrix[i][j] = null;
             }
         }
+
         for (int i = 0; i < 1; i++) {
             Random r = new Random();
             double trash_thrower_value = 0 + (1 - 0) * r.nextDouble();
@@ -71,12 +77,16 @@ public class GameEngine extends JPanel implements MouseListener {
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(665, 70), "./src/img/entrance.jpg"));
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(630, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][630 / 35] = 1;
+        PATHS_matrix[70 / 35][630 / 35] = paths.get(paths.size()-1);
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(595, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][595 / 35] = 1;
+        PATHS_matrix[70 / 35][595 / 35] = paths.get(paths.size()-1);
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(560, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][560 / 35] = 1;
+        PATHS_matrix[70 / 35][560 / 35] = paths.get(paths.size()-1);
         paths.add(new Path(Integer.parseInt(CONSTANTS.DIRT_PATH_PRICE), new Point(525, 70), "./src/img/dirty-path.JPG"));
         paths_matrix[70 / 35][525 / 35] = 1;
+        PATHS_matrix[70 / 35][525 / 35] = paths.get(paths.size()-1);
         top = new TopPanel(this);
         top.numberOfVisitors.setText(String.valueOf(this.visitors.size()));
 
@@ -177,6 +187,9 @@ public class GameEngine extends JPanel implements MouseListener {
             }
         }
 
+        if (cleaners.size() > 0 && trashes.size() > 0) {
+
+        }
 
     }
 
@@ -510,61 +523,55 @@ public class GameEngine extends JPanel implements MouseListener {
         return true;
     }
 
-    private void createAdjacentNodes() {
-//        #: we here
-//        -x- : between which do we choose
-//
-//        x   x   x   x   x
-//
-//        y   0   0  -1-  1   0
-//        y   0  -0-  #  -1-  1
-//        y   0   0  -1-  0   0
+    private void updateAllAdjacentNodes() {
 
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                if (paths_matrix[i][j] == 1) {
-                    for (Path p : paths) {
-
-
-
-                        if (p.getPosition().x / 35 == i && p.getPosition().y / 35 == j) {
-                            try {
-                                if (paths_matrix[i-1][j] == 1) {
-
-                                }
-                            } catch (IndexOutOfBoundsException e) {
-                                //direction3 = -1;
-                            }
-
-                            try {
-                                if (paths_matrix[i][j+1] == 1) {
-
-                                }
-                            } catch (IndexOutOfBoundsException e) {
-                                //direction3 = -1;
-                            }
-
-                            try {
-                                if (paths_matrix[i+1][j] == 1) {
-
-                                }
-                            } catch (IndexOutOfBoundsException e) {
-                                //direction3 = -1;
-                            }
-
-                            try {
-                                if (paths_matrix[i][j-1] == 1) {
-
-                                }
-                            } catch (IndexOutOfBoundsException e) {
-                                //direction3 = -1;
-                            }
-
-                        }
-                    }
-                }
-            }
+        for (Path p : paths) {
+            p.nodes = createAdjacentNodes(p.getPosition().x, p.getPosition().y);
         }
+
+    }
+
+    private ArrayList<Path> createAdjacentNodes(int x0, int y0) {
+
+        int x = x0 / 35;
+        int y = y0 / 35;
+
+        ArrayList<Path> nodes = new ArrayList<>();
+
+        try {
+            if (paths_matrix[x-1][y] == 1) {
+                nodes.add(PATHS_matrix[x-1][y]);
+            }
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+
+        try {
+            if (paths_matrix[x][y+1] == 1) {
+                nodes.add(PATHS_matrix[x][y+1]);
+            }
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+
+        try {
+            if (paths_matrix[x+1][y] == 1) {
+                nodes.add(PATHS_matrix[x+1][y]);
+            }
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+
+        try {
+            if (paths_matrix[x][y-1] == 1) {
+                nodes.add(PATHS_matrix[x][y-1]);
+            }
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+
+        return nodes;
+
     }
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -585,6 +592,10 @@ public class GameEngine extends JPanel implements MouseListener {
                 paths.get(paths.size() - 1).position = new Point(xy[0], xy[1]);
                 //marking cell as path in matrix
                 paths_matrix[xy[1] / 35][xy[0] / 35] = 1;
+                PATHS_matrix[xy[1] / 35][xy[0] / 35] = paths.get(paths.size()-1);
+
+                updateAllAdjacentNodes();
+
                 if (paths.size() > 5) {
                     is_builded = true;
                 }
@@ -1441,7 +1452,6 @@ public class GameEngine extends JPanel implements MouseListener {
                                     ge.repairmen.add(new Repairman(new Point(665, 70)));
 
                                     ge.state = 0;
-
 
                                 }
                                 break;
