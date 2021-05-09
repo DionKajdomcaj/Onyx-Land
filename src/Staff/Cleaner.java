@@ -33,19 +33,20 @@ public class Cleaner extends Staff {
     }
 
     public void updatePosition() {
-        System.out.println(the_way.size() + " size");
+        //System.out.println(the_way.size() + " size");
 
-        if (is_move)  {
-            System.out.println(paths_passed + " --");
+        if (is_move) {
+            //System.out.println(paths_passed + " --");
             position.setX(the_way.get(paths_passed).getPosition().x);
             position.setY(the_way.get(paths_passed).getPosition().y);
             paths_passed++;
         }
 
-        if (paths_passed == the_way.size()-1) {
+        if (paths_passed == the_way.size()) {
             is_move = false;
             time_to_clean = true;
         }
+
     }
 
     public void freeToWork() {

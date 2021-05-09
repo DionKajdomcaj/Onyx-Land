@@ -22,18 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="createAdjacentNodes works (not tested)">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Cleaner is movable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/Cleaner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Trash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,19 +89,6 @@
     <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OnyxLand" />
       <module name="onyx-land" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,7 +180,8 @@
       <workItem from="1618996560393" duration="1852000" />
       <workItem from="1619105737959" duration="7649000" />
       <workItem from="1620401516995" duration="11618000" />
-      <workItem from="1620491553137" duration="17006000" />
+      <workItem from="1620491553137" duration="17324000" />
+      <workItem from="1620570152531" duration="2248000" />
     </task>
     <task id="LOCAL-00001" summary="Building">
       <created>1618937527796</created>
@@ -284,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620496934070</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cleaner is movable">
+      <created>1620510437104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620510437104</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,18 +305,10 @@
     <MESSAGE value="Start implementing cleaners and repairmen" />
     <MESSAGE value="createAdjacentNodes" />
     <MESSAGE value="createAdjacentNodes works (not tested)" />
-    <option name="LAST_COMMIT_MESSAGE" value="createAdjacentNodes works (not tested)" />
+    <MESSAGE value="Cleaner is movable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaner is movable" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GameEngine.java</url>
-          <line>396</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="PATHS_matrix" language="JAVA" />

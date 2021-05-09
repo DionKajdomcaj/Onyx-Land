@@ -168,7 +168,7 @@ public class GameEngine extends JPanel implements MouseListener {
                         Random r = new Random();
                         int k = 0 + (int) (Math.random() * 1000);
                         //System.out.println("---" + k + "--" + v.trashThrower + "---");
-                        if (k > 100/*970*/ && v.trashThrower < 0.9/*0.7*/) {
+                        if (k > 970 && v.trashThrower < 0.6) {
                             Trash trash = new Trash();
                             trash.setPosition(v.getPosition());
                             trashes.add(trash);
@@ -385,22 +385,29 @@ public class GameEngine extends JPanel implements MouseListener {
                                     }
                                     System.out.println();
                                 }*/
-                                System.out.println(cleaners.get(i).position.x / 35 + " " + cleaners.get(i).position.y / 35);
+                                //System.out.println(cleaners.get(i).position.x / 35 + " " + cleaners.get(i).position.y / 35);
                                 LinkedList<Path> ll = dfsa.DFS(PATHS_matrix[cleaners.get(i).position.y / 35][cleaners.get(i).position.x / 35],
                                                                PATHS_matrix[trashes.get(i).getPosition().y / 35][trashes.get(i).getPosition().x / 35]);
                                 cleaners.get(i).the_way = new ArrayList<>(ll);
                                 cleaners.get(i).is_work = true;
                                 cleaners.get(i).is_move = true;
-                            } else if (cleaners.get(i).time_to_clean) {
+                            }
+                            cleaners.get(i).updatePosition();
+
+                            if (cleaners.get(i).time_to_clean) {
+                                //System.out.println("In IF");
                                 for (int z = 0; z < trashes.size(); z++) {
+
+                                    //System.out.println("In FOR");
+
                                     //Doesnt enter here
-                                    if (trashes.get(z).getPosition().equals(cleaners.get(i).position)) {
+                                    if (trashes.get(z).getPosition().x == cleaners.get(i).position.x &&
+                                            trashes.get(z).getPosition().y == cleaners.get(i).position.y) {
                                         trashes.remove(z);
                                         cleaners.get(i).freeToWork();
                                     }
                                 }
                             }
-                            cleaners.get(i).updatePosition();
                         }
                     }
 
