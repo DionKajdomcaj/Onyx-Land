@@ -22,10 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="visitors paying tickets and using the buildings.">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="fixed some stuff about building usage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onyx-land.iml" beforeDir="false" afterPath="$PROJECT_DIR$/onyx-land.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620584962759</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed some stuff about building usage">
+      <created>1620586084859</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620586084859</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,29 +334,30 @@
     <MESSAGE value="CLEANER IS WORKING (omg)" />
     <MESSAGE value="using building methods, paying the tickets, showing the avg mood, increasing and decreasing based on the conditions." />
     <MESSAGE value="visitors paying tickets and using the buildings." />
-    <option name="LAST_COMMIT_MESSAGE" value="visitors paying tickets and using the buildings." />
+    <MESSAGE value="fixed some stuff about building usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some stuff about building usage" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1620585823494">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1620586120255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620585823494" />
-    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1620585823493">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
+    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1620586120255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620585823493" />
-    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1620585823493">
+    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
+    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1620586120254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620585823493" />
-    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1620585823493">
+    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620586120254" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1620586120255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620585823493" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1620584965869">
+    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1620586088125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620584965869" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620586088125" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1620585127052">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -16,6 +16,7 @@ public class Visitor {
     private int amountOfMoney=999999999;
     private Point position;
     private Point previous_position;
+    public int numberOfvisited;
     public BufferedImage img;
 
     public Visitor(double tth){
@@ -23,6 +24,7 @@ public class Visitor {
         this.position=new Point(665, 70);
         this.previous_position = new Point(1000,1000);
         this.mood=50;
+        this.numberOfvisited=0;
 
         try {
             this.img = ImageIO.read(new File("./src/img/visitors2.png"));

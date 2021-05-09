@@ -422,7 +422,6 @@ public class GameEngine extends JPanel implements MouseListener {
                                 for (int z = 0; z < trashes.size(); z++) {
 
                                     //System.out.println("In FOR");
-
                                     //Doesnt enter here
                                     if (trashes.get(z).getPosition().x == cleaners.get(i).position.x &&
                                             trashes.get(z).getPosition().y == cleaners.get(i).position.y) {
@@ -441,11 +440,20 @@ public class GameEngine extends JPanel implements MouseListener {
                 }
                 if(buildings.size()>=2){
                     for(Visitor v : visitors){
-                        Random r = new Random();
-                        int random = r.nextInt(buildings.size());
-                        v.useBuildings(buildings.get(random),player);
-                        top.averageMood.setText(String.valueOf(averageMood()));
-                        top.moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()+buildings.get(random).getTicketPrice()));
+                        if(v.numberOfvisited!=buildings.size()){
+                            Random r = new Random();
+                            int random = r.nextInt(buildings.size());
+                            v.useBuildings(buildings.get(random),player);
+                            top.averageMood.setText(String.valueOf(averageMood()));
+                            top.moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()+buildings.get(random).getTicketPrice()));
+                        }
+                        else{
+                            visitors.remove(v);
+                            top.averageMood.setText(String.valueOf(averageMood()));
+                            top.numberOfVisitors.setText(String.valueOf(visitors.size()));
+
+                        }
+
                     }
                 }
 
