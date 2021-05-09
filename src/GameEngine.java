@@ -380,6 +380,10 @@ public class GameEngine extends JPanel implements MouseListener {
                             Point p = new Point(visitors.get(i).getPosition().x + visitors.get(i).directionToMove.x, visitors.get(i).getPosition().y + visitors.get(i).directionToMove.y);
                             visitors.get(i).setPrevPosition(p0);
                             visitors.get(i).setPosition(p);
+
+
+
+
                         } else {
                             Point p0 = visitors.get(i).getPosition();
                             Point p = new Point(visitors.get(i).getPosition().x + visitors.get(i).directionToMove.x, visitors.get(i).getPosition().y + visitors.get(i).directionToMove.y);
@@ -434,6 +438,12 @@ public class GameEngine extends JPanel implements MouseListener {
                     }
 
                     repaint();
+                }
+                for(Visitor v : visitors){
+                    Random r = new Random();
+                    int random = r.nextInt(buildings.size());
+                    v.useBuildings(buildings.get(random),player);
+                    top.averageMood.setText(String.valueOf(averageMood()));
                 }
 
             }

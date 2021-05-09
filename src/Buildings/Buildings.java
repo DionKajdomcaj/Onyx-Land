@@ -16,6 +16,7 @@ public abstract class Buildings {
     protected int ticketPrice;
     protected Point size; //for example "3x6", "8x2"
     public Point position;
+    private int moodImprovement;
     //protected int moodImprovement;
     //protected int maxVisitors;
     public BufferedImage img;
@@ -66,12 +67,12 @@ public abstract class Buildings {
     public int getTicketPrice() {
         return this.ticketPrice;
     }
-    /*
+
     public int getMoodImprovement() {
         return this.moodImprovement;
     }
 
-     */
+
     // public int getMaxVisitors() {return this.maxVisitors;}
     // public int getCurrentLevel() {return this.level;}
     public boolean collides(Buildings other){

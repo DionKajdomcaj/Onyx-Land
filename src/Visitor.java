@@ -53,13 +53,9 @@ public class Visitor {
     public void setPrevPosition(Point pos){
         previous_position=new Point(pos);
     }
-    public void useRestaurants(Restaurant r,Player p){
-            setMood(getMood() + r.getMoodImprovement());
-            payTicket(r,p);
-    }
-    public void useGames(Games g,Player p){
-        setMood(getMood() + g.getMoodImprovement());
-        payTicket(g,p);
+    public void useBuildings(Buildings b ,Player p){
+            setMood(getMood() + b.getMoodImprovement());
+            payTicket(b,p);
     }
     public void payTicket(Buildings b,Player p){
         amountOfMoney-=b.getTicketPrice();
