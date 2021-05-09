@@ -13,6 +13,7 @@ public class Visitor {
     public Point directionToMove = new Point(-35, 0);
     public double trashThrower = 0.0;
     private int mood;
+    private int amountOfMoney=999999999;
     private Point position;
     private Point previous_position;
     public BufferedImage img;
@@ -52,16 +53,19 @@ public class Visitor {
     public void setPrevPosition(Point pos){
         previous_position=new Point(pos);
     }
-    public void useRestaurants(Restaurant r,int i){
-        if(i==1){
+    public void useRestaurants(Restaurant r,Player p){
             setMood(getMood() + r.getMoodImprovement());
-        }
-        else{
-            setMood(getMood() - r.getMoodImprovement());
-        }
+            payTicket(r,p);
     }
-    public void payTicket(){}
-    public void throwTrash(){}
+    public void useGames(Games g,Player p){
+        setMood(getMood() + g.getMoodImprovement());
+        payTicket(g,p);
+    }
+    public void payTicket(Buildings b,Player p){
+        amountOfMoney-=b.getTicketPrice();
+        p.setAmountOfMoney((p.getamountOfMoney()+b.getTicketPrice()));
+
+    }
     public void exit(){}
 
 }

@@ -95,8 +95,7 @@ public class GameEngine extends JPanel implements MouseListener {
 
         top = new TopPanel(this);
         top.numberOfVisitors.setText(String.valueOf(this.visitors.size()));
-
-        System.out.println(top.getAccessibleContext());
+        top.averageMood.setText(String.valueOf(averageMood()));
 
 
         addMouseListener(this);
@@ -182,9 +181,17 @@ public class GameEngine extends JPanel implements MouseListener {
                                 Trash trash = new Trash();
                                 trash.setPosition(v.getPosition());
                                 trashes.add(trash);
+                                for(Visitor v2 : visitors){
+                                    v2.setMood(v2.getMood()-20);
+                                }
+                                top.averageMood.setText(String.valueOf(averageMood()));
                                 PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here = true;
                                 was_thrown = true;
                                 cleaner_has_work = true;
+                                for(Visitor v2: visitors){
+                                    v2.setMood(v.getMood()+20);
+                                }
+                                top.averageMood.setText(String.valueOf(averageMood()));
                             }
                         }
                     }
@@ -666,6 +673,10 @@ public class GameEngine extends JPanel implements MouseListener {
                 gardens.get(gardens.size() - 1).position = new Point(xy[0], xy[1]);
                 repaint();
                 player.setAmountOfMoney(player.getamountOfMoney() - gardens.get(gardens.size() - 1).getPrice());
+                for(Visitor v : visitors){
+                    v.setMood(v.getMood()+gardens.size());
+                }
+                top.averageMood.setText(String.valueOf(averageMood()));
             }
         }
     }
