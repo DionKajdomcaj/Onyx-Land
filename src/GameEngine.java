@@ -439,12 +439,16 @@ public class GameEngine extends JPanel implements MouseListener {
 
                     repaint();
                 }
-                for(Visitor v : visitors){
-                    Random r = new Random();
-                    int random = r.nextInt(buildings.size());
-                    v.useBuildings(buildings.get(random),player);
-                    top.averageMood.setText(String.valueOf(averageMood()));
+                if(buildings.size()>=2){
+                    for(Visitor v : visitors){
+                        Random r = new Random();
+                        int random = r.nextInt(buildings.size());
+                        v.useBuildings(buildings.get(random),player);
+                        top.averageMood.setText(String.valueOf(averageMood()));
+                        top.moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()+buildings.get(random).getTicketPrice()));
+                    }
                 }
+
 
             }
 
