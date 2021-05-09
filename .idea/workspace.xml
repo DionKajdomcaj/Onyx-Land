@@ -22,10 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="Cleaner is movable">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="CLEANER IS WORKING (omg)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/GameEngine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Staff/Cleaner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buildings/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff/Cleaner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Trash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trash.java" afterDir="false" />
@@ -181,7 +187,7 @@
       <workItem from="1619105737959" duration="7649000" />
       <workItem from="1620401516995" duration="11618000" />
       <workItem from="1620491553137" duration="17324000" />
-      <workItem from="1620570152531" duration="2248000" />
+      <workItem from="1620570152531" duration="9215000" />
     </task>
     <task id="LOCAL-00001" summary="Building">
       <created>1618937527796</created>
@@ -274,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620510437104</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="CLEANER IS WORKING (omg)">
+      <created>1620572534620</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620572534620</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +319,8 @@
     <MESSAGE value="createAdjacentNodes" />
     <MESSAGE value="createAdjacentNodes works (not tested)" />
     <MESSAGE value="Cleaner is movable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaner is movable" />
+    <MESSAGE value="CLEANER IS WORKING (omg)" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLEANER IS WORKING (omg)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -314,6 +328,7 @@
         <watch expression="PATHS_matrix" language="JAVA" />
         <watch expression="PATHS_matrix" language="JAVA" />
         <watch expression="parents" language="JAVA" />
+        <watch expression="trashes.get(2)" />
       </configuration>
     </watches-manager>
   </component>

@@ -8,7 +8,6 @@ import Point.Point;
 public class Trash {
     public BufferedImage img;
     private Point position;
-    private Point real_position;
     public Trash() {
         try {
             this.img = ImageIO.read(new File("./src/img/trash.JPG"));

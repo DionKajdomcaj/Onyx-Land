@@ -158,27 +158,37 @@ public class GameEngine extends JPanel implements MouseListener {
                 is_builded = false;
             }
         }
-        if (number_of_visitors > 2) {
+        if (number_of_visitors > 4) {
 
             for (Visitor v : visitors) {
                 if (was_thrown) {
                     v.draw(g);
                 } else {
-                    if (!(v.getPosition() == paths.get(0).getPosition() || v.getPosition() == paths.get(1).getPosition())) {
+                    if (!(  (v.getPosition().x == paths.get(0).getPosition().x && v.getPosition().y == paths.get(0).getPosition().y) ||
+                            (v.getPosition().x == paths.get(1).getPosition().x && v.getPosition().y == paths.get(1).getPosition().y)) &&
+                            !PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here) {
                         Random r = new Random();
                         int k = 0 + (int) (Math.random() * 1000);
                         //System.out.println("---" + k + "--" + v.trashThrower + "---");
                         if (k > 970 && v.trashThrower < 0.6) {
-                            Trash trash = new Trash();
-                            trash.setPosition(v.getPosition());
-                            trashes.add(trash);
-                            was_thrown = true;
-                            cleaner_has_work = true;
-                            //trash.draw(g);
+                            boolean cleaner_is_here = false;
+                            for (Cleaner c : cleaners) {
+                                if (c.position.x == v.getPosition().x && c.position.y == v.getPosition().y) {
+                                    cleaner_is_here = true;
+                                    break;
+                                }
+                            }
+                            if (!cleaner_is_here) {
+                                Trash trash = new Trash();
+                                trash.setPosition(v.getPosition());
+                                trashes.add(trash);
+                                PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here = true;
+                                was_thrown = true;
+                                cleaner_has_work = true;
+                            }
                         }
                     }
                     v.draw(g);
-
                 }
 
             }
@@ -386,11 +396,13 @@ public class GameEngine extends JPanel implements MouseListener {
                                     System.out.println();
                                 }*/
                                 //System.out.println(cleaners.get(i).position.x / 35 + " " + cleaners.get(i).position.y / 35);
-                                LinkedList<Path> ll = dfsa.DFS(PATHS_matrix[cleaners.get(i).position.y / 35][cleaners.get(i).position.x / 35],
-                                                               PATHS_matrix[trashes.get(i).getPosition().y / 35][trashes.get(i).getPosition().x / 35]);
-                                cleaners.get(i).the_way = new ArrayList<>(ll);
-                                cleaners.get(i).is_work = true;
-                                cleaners.get(i).is_move = true;
+                                if (trashes.size() - 1 >= i) {
+                                    LinkedList<Path> ll = dfsa.DFS(PATHS_matrix[cleaners.get(i).position.y / 35][cleaners.get(i).position.x / 35],
+                                            PATHS_matrix[trashes.get(i).getPosition().y / 35][trashes.get(i).getPosition().x / 35]);
+                                    cleaners.get(i).the_way = new ArrayList<>(ll);
+                                    cleaners.get(i).is_work = true;
+                                    cleaners.get(i).is_move = true;
+                                }
                             }
                             cleaners.get(i).updatePosition();
 
@@ -403,10 +415,13 @@ public class GameEngine extends JPanel implements MouseListener {
                                     //Doesnt enter here
                                     if (trashes.get(z).getPosition().x == cleaners.get(i).position.x &&
                                             trashes.get(z).getPosition().y == cleaners.get(i).position.y) {
+                                        PATHS_matrix[trashes.get(z).getPosition().y / 35][trashes.get(z).getPosition().x / 35].trash_is_here = false;
                                         trashes.remove(z);
                                         cleaners.get(i).freeToWork();
                                     }
                                 }
+                                cleaners.get(i).freeToWork();
+
                             }
                         }
                     }

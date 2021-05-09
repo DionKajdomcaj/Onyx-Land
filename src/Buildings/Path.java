@@ -15,7 +15,7 @@ public class Path {
     private final int size=1;
     public Point position;
     public ArrayList<Path> nodes;
-
+    public boolean trash_is_here = false;
     public BufferedImage img;
     public Path(int price, Point pos, String src){
         this.price=price;
