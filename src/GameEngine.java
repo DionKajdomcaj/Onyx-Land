@@ -453,6 +453,7 @@ public class GameEngine extends JPanel implements MouseListener {
                             top.averageMood.setText(String.valueOf(averageMood()));
                             top.numberOfVisitors.setText(String.valueOf(visitors.size()));
 
+
                         }
 
                     }
