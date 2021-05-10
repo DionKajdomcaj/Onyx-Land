@@ -22,8 +22,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="conditions on visitors">
-      <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="visitors paying tickets and using the buildings.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +70,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -84,6 +96,17 @@
     <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OnyxLand" />
       <module name="onyx-land" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,7 +181,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration>C:\Users\LIZA\AppData\Roaming\Subversion</configuration>
   </component>
@@ -290,21 +313,7 @@
       <option name="project" value="LOCAL" />
       <updated>1620584962759</updated>
     </task>
-    <task id="LOCAL-00017" summary="fixed some stuff about building usage">
-      <created>1620586084859</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1620586084859</updated>
-    </task>
-    <task id="LOCAL-00018" summary="conditions on visitors">
-      <created>1620586475397</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1620586475397</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,35 +348,7 @@
     <MESSAGE value="CLEANER IS WORKING (omg)" />
     <MESSAGE value="using building methods, paying the tickets, showing the avg mood, increasing and decreasing based on the conditions." />
     <MESSAGE value="visitors paying tickets and using the buildings." />
-    <MESSAGE value="fixed some stuff about building usage" />
-    <MESSAGE value="conditions on visitors" />
-    <option name="LAST_COMMIT_MESSAGE" value="conditions on visitors" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1620586120255">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
-    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1620586120255">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
-    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1620586120254">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620586120254" />
-    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1620586120255">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620586120255" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1620586481712">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620586481712" />
-    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1620585127052">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1620585127052" />
+    <option name="LAST_COMMIT_MESSAGE" value="visitors paying tickets and using the buildings." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -380,13 +361,13 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest.ic" NAME="BuildingsTest Coverage Results" MODIFIED="1619426158349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest_upgradeTheLevel.ic" NAME="BuildingsTest.upgradeTheLevel Coverage Results" MODIFIED="1619426000445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/onyx_land10$AtmTest.ic" NAME="AtmTest Coverage Results" MODIFIED="1619427588927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest_upgradeTheLevel.ic" NAME="BuildingsTest.upgradeTheLevel Coverage Results" MODIFIED="1619426000445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest.ic" NAME="BuildingsTest Coverage Results" MODIFIED="1619426158349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
   </component>
