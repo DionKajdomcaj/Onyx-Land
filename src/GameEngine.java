@@ -172,7 +172,8 @@ public class GameEngine extends JPanel implements MouseListener {
                 } else {
                     if (!(  (v.getPosition().x == paths.get(0).getPosition().x && v.getPosition().y == paths.get(0).getPosition().y) ||
                             (v.getPosition().x == paths.get(1).getPosition().x && v.getPosition().y == paths.get(1).getPosition().y)) &&
-                            !PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here) {
+                            !PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here &&
+                            !v.is_visiting_right_now) {
                         Random r = new Random();
                         int k = 0 + (int) (Math.random() * 1000);
                         //System.out.println("---" + k + "--" + v.trashThrower + "---");

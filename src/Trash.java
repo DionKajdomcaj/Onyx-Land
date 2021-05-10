@@ -8,7 +8,7 @@ import Point.Point;
 public class Trash {
     public BufferedImage img;
     private Point position;
-    public int mood_decrease = -8;
+    public int mood_decrease = -7;
     public Trash() {
         try {
             this.img = ImageIO.read(new File("./src/img/trash.JPG"));
