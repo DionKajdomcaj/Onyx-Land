@@ -17,6 +17,8 @@ public abstract class Buildings {
     protected Point size; //for example "3x6", "8x2"
     public Point position;
     private int moodImprovement;
+    public int capacity = 4;
+    public int visitors_inside_counter = 0;
     //protected int moodImprovement;
     //protected int maxVisitors;
     public BufferedImage img;

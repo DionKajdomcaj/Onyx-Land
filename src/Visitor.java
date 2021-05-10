@@ -17,6 +17,12 @@ public class Visitor {
     private Point position;
     private Point previous_position;
     public int numberOfvisited;
+    public boolean is_visiting_right_now = false;
+    public boolean walking_to_another = false;
+    public long time_of_enter;
+    public long time_of_walking;
+    public long time_of_enter_the_park;
+
     public BufferedImage img;
 
     public Visitor(double tth){
@@ -25,7 +31,7 @@ public class Visitor {
         this.previous_position = new Point(1000,1000);
         this.mood=50;
         this.numberOfvisited=0;
-
+        this.time_of_enter_the_park = System.currentTimeMillis();
         try {
             this.img = ImageIO.read(new File("./src/img/visitors2.png"));
         } catch (IOException e) {
@@ -35,7 +41,8 @@ public class Visitor {
 
     }
     public void draw(Graphics g){
-        g.drawImage(img,position.getX(),position.getY(),35,35,null);//x=width, y=height
+        if (!is_visiting_right_now)
+            g.drawImage(img,position.getX(),position.getY(),35,35,null);//x=width, y=height
     }
     public int getMood(){
         return mood;
@@ -56,13 +63,18 @@ public class Visitor {
         previous_position=new Point(pos);
     }
     public void useBuildings(Buildings b ,Player p){
+        if (b.capacity > b.visitors_inside_counter) {
             setMood(getMood() + b.getMoodImprovement());
             payTicket(b,p);
+            this.is_visiting_right_now = true;
+            this.time_of_enter = System.currentTimeMillis();
+            b.visitors_inside_counter++;
+        }
+
     }
     public void payTicket(Buildings b,Player p){
         amountOfMoney-=b.getTicketPrice();
         p.setAmountOfMoney((p.getamountOfMoney()+b.getTicketPrice()));
-
     }
     public void exit(){}
 

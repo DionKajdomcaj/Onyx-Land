@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
+import static java.lang.Math.abs;
+
 public class GameEngine extends JPanel implements MouseListener {
     Player player;
     TopPanel top;
@@ -106,7 +108,12 @@ public class GameEngine extends JPanel implements MouseListener {
         int sum = 0;
         for (Visitor v : visitors) {
             sum += v.getMood();
+
         }
+        for (Trash t : trashes) {
+            sum += t.mood_decrease;
+        }
+
         return sum / visitors.size();
     }
 
@@ -181,17 +188,17 @@ public class GameEngine extends JPanel implements MouseListener {
                                 Trash trash = new Trash();
                                 trash.setPosition(v.getPosition());
                                 trashes.add(trash);
-                                for(Visitor v2 : visitors){
+                                /*for(Visitor v2 : visitors){
                                     v2.setMood(v2.getMood()-20);
                                 }
-                                top.averageMood.setText(String.valueOf(averageMood()));
+                                top.averageMood.setText(String.valueOf(averageMood()));*/
                                 PATHS_matrix[v.getPosition().y / 35][v.getPosition().x / 35].trash_is_here = true;
                                 was_thrown = true;
                                 cleaner_has_work = true;
-                                for(Visitor v2: visitors){
+                                /*for(Visitor v2: visitors){
                                     v2.setMood(v.getMood()+20);
                                 }
-                                top.averageMood.setText(String.valueOf(averageMood()));
+                                top.averageMood.setText(String.valueOf(averageMood()));*/
                             }
                         }
                     }
@@ -204,6 +211,7 @@ public class GameEngine extends JPanel implements MouseListener {
 
             for(Trash t : trashes) {
                 t.draw(g);
+
             }
 
         } else {
@@ -380,10 +388,6 @@ public class GameEngine extends JPanel implements MouseListener {
                             Point p = new Point(visitors.get(i).getPosition().x + visitors.get(i).directionToMove.x, visitors.get(i).getPosition().y + visitors.get(i).directionToMove.y);
                             visitors.get(i).setPrevPosition(p0);
                             visitors.get(i).setPosition(p);
-
-
-
-
                         } else {
                             Point p0 = visitors.get(i).getPosition();
                             Point p = new Point(visitors.get(i).getPosition().x + visitors.get(i).directionToMove.x, visitors.get(i).getPosition().y + visitors.get(i).directionToMove.y);
@@ -438,9 +442,28 @@ public class GameEngine extends JPanel implements MouseListener {
 
                     repaint();
                 }
-                if(buildings.size()>=2){
+                if(buildings.size()>=1){
                     for(Visitor v : visitors){
-                        if(v.numberOfvisited!=buildings.size()){
+                        if (abs(v.time_of_enter_the_park - System.currentTimeMillis()) >= paths.size() * 1000) {
+                            if (!v.is_visiting_right_now && !v.walking_to_another){
+                                Random r = new Random();
+                                int random = r.nextInt(buildings.size());
+                                v.useBuildings(buildings.get(random),player);
+                                top.averageMood.setText(String.valueOf(averageMood()));
+                                top.moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()+buildings.get(random).getTicketPrice()));
+                                v.numberOfvisited++;
+                                //System.out.println("-------Set use-------");
+                            } else if (v.is_visiting_right_now && abs(v.time_of_enter - System.currentTimeMillis()) >= 30000) {
+                                v.is_visiting_right_now = false;
+                                v.walking_to_another = true;
+                                v.time_of_walking = System.currentTimeMillis();
+                                //System.out.println("-------Exit-------");
+                            } else if (v.walking_to_another && abs(v.time_of_walking - System.currentTimeMillis()) >= 10000) {
+                                v.walking_to_another = false;
+                            }
+                        }
+
+                        /*if(v.numberOfvisited!=buildings.size()){
                             Random r = new Random();
                             int random = r.nextInt(buildings.size());
                             v.useBuildings(buildings.get(random),player);
@@ -448,13 +471,11 @@ public class GameEngine extends JPanel implements MouseListener {
                             top.moneyOfPlayer.setText(String.valueOf(player.getamountOfMoney()+buildings.get(random).getTicketPrice()));
                             v.numberOfvisited++;
                         }
-                        else{
+                        else {
                             visitors.remove(v);
                             top.averageMood.setText(String.valueOf(averageMood()));
                             top.numberOfVisitors.setText(String.valueOf(visitors.size()));
-
-
-                        }
+                        }*/
 
                     }
                 }

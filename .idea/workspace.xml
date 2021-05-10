@@ -22,20 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="visitors paying tickets and using the buildings.">
+    <list default="true" id="3c020644-057b-4fc3-8d9b-daceb21962fd" name="Default Changelist" comment="trash jpg was added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Buildings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Games.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Gardens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Grass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Shrubs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Gargens/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Buildings/Restaurant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/CONSTANTS/CONSTANTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/onyx-land/Point/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings/Buildings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620584962759</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="trash jpg was added">
+      <created>1620629830053</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620629830053</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,9 +348,18 @@
     <MESSAGE value="CLEANER IS WORKING (omg)" />
     <MESSAGE value="using building methods, paying the tickets, showing the avg mood, increasing and decreasing based on the conditions." />
     <MESSAGE value="visitors paying tickets and using the buildings." />
-    <option name="LAST_COMMIT_MESSAGE" value="visitors paying tickets and using the buildings." />
+    <MESSAGE value="trash jpg was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="trash jpg was added" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="PATHS_matrix" language="JAVA" />
