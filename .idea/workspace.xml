@@ -99,13 +99,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.OnyxLand">
-    <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OnyxLand" />
-      <module name="onyx-land" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -113,6 +106,13 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnyxLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OnyxLand" />
+      <module name="onyx-land" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -391,13 +391,13 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest_upgradeTheLevel.ic" NAME="BuildingsTest.upgradeTheLevel Coverage Results" MODIFIED="1619426000445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest.ic" NAME="BuildingsTest Coverage Results" MODIFIED="1619426158349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/onyx_land10$AtmTest.ic" NAME="AtmTest Coverage Results" MODIFIED="1619427588927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest.ic" NAME="BuildingsTest Coverage Results" MODIFIED="1619426158349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/onyx_land10$BuildingsTest_upgradeTheLevel.ic" NAME="BuildingsTest.upgradeTheLevel Coverage Results" MODIFIED="1619426000445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Buildings.*</FILTER>
     </SUITE>
   </component>
